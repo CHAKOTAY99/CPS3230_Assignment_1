@@ -1,0 +1,6 @@
+code,name,major
+AUD,Australian Dollar,no
+EUR,Euro,yes
+GBP,British Pound,yes
+TRY,Turkish Lira,no
+USD,US Dollar,yes
