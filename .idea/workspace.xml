@@ -2,18 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="695003a6-cc6f-41b7-81e8-debdc963a4f4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/uom/currencymanager/CurrencyDatabaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/uom/currencymanager/CurrencyDatabaseTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/currencies.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/currencies.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/uom/currencymanager/CurrencyManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/uom/currencymanager/CurrencyManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/uom/currencymanager/currencies/Currency.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/uom/currencymanager/currencies/Currency.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/uom/currencymanager/currencies/CurrencyDatabase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/uom/currencymanager/currencies/CurrencyDatabase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/uom/currencymanager/currencies/ExchangeRate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/uom/currencymanager/currencies/ExchangeRate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/uom/currencymanager/currencies/Util.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/uom/currencymanager/currencies/Util.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/uom/currencymanager/currencyserver/CurrencyServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/uom/currencymanager/currencyserver/CurrencyServer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/uom/currencymanager/currencyserver/DefaultCurrencyServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/uom/currencymanager/currencyserver/DefaultCurrencyServer.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,7 +29,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../CPS3230UnitTesting" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -68,7 +60,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.CurrencyManager">
     <configuration name="CurrencyManager" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="edu.uom.currencymanager.CurrencyManager" />
       <module name="currencymanager" />
@@ -82,9 +74,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CurrencyDatabaseTest.initFileFailure_throwException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="currencymanager" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.uom.currencymanager.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.uom.currencymanager" />
+      <option name="MAIN_CLASS_NAME" value="edu.uom.currencymanager.CurrencyDatabaseTest" />
+      <option name="METHOD_NAME" value="initFileFailure_throwException" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.CurrencyManager" />
+        <item itemvalue="JUnit.CurrencyDatabaseTest.initFileFailure_throwException" />
       </list>
     </recent_temporary>
   </component>
@@ -105,6 +114,7 @@
       <workItem from="1571814743866" duration="586000" />
       <workItem from="1572613670801" duration="538000" />
       <workItem from="1572642291715" duration="3896000" />
+      <workItem from="1572686576560" duration="5575000" />
     </task>
     <servers />
   </component>
@@ -116,7 +126,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -130,7 +142,27 @@
           <line>61</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/uom/currencymanager/currencies/CurrencyDatabase.java</url>
+          <line>152</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/uom/currencymanager/currencies/CurrencyDatabase.java</url>
+          <line>143</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/uom/currencymanager/currencies/CurrencyDatabase.java</url>
+          <line>134</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/CPS3230_Assignment_1$CurrencyDatabaseTest_initFileFailure_throwException.ic" NAME="CurrencyDatabaseTest.initFileFailure_throwException Coverage Results" MODIFIED="1572689671584" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>edu.uom.currencymanager.*</FILTER>
+    </SUITE>
   </component>
 </project>
