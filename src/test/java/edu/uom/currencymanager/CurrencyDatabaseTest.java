@@ -2,42 +2,109 @@ package edu.uom.currencymanager;
 
 import edu.uom.currencymanager.currencies.Currency;
 import edu.uom.currencymanager.currencies.CurrencyDatabase;
-import edu.uom.currencymanager.currencies.ExchangeRate;
-import edu.uom.currencymanager.currencyserver.CurrencyServer;
-import edu.uom.currencymanager.currencyserver.DefaultCurrencyServer;
-import junit.framework.AssertionFailedError;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 public class CurrencyDatabaseTest {
 
     CurrencyDatabase currencyDatabase;
-    CurrencyServer currencyServer;
-    List<Currency> currencies = new ArrayList<Currency>();
-    HashMap<String, ExchangeRate> exchangeRates = new HashMap<String, ExchangeRate>();
-
-    String currenciesFile = "target" + File.separator + "classes" + File.separator + "currencies.txt";
 
     @Before
     public void setup() throws Exception {
         currencyDatabase = new CurrencyDatabase();
-        currencyServer = new DefaultCurrencyServer();
+
+        List<Currency> initialDatabase = currencyDatabase.getCurrencies();
+        if(!initialDatabase.isEmpty()){
+            for(Currency currency : initialDatabase){
+                currencyDatabase.deleteCurrency(currency.code);
+            }
+        }
     }
 
     @After
     public void teardown(){
         currencyDatabase = null;
-        currencyServer = null;
     }
 
+    @Test
+    public void testCurrencyByCode_NotExist(){
+        // Exercise
+        Currency currency = currencyDatabase.getCurrencyByCode(null);
+        // Verify
+        assertEquals(null, currency);
+    }
+
+    @Test
+    public void testCurrencyByCode_Default() throws Exception {
+        // Setup
+        currencyDatabase.addCurrency(new Currency("RMB", "Renminbi", true));
+        // Exercise
+        Currency currency = currencyDatabase.getCurrencyByCode("RMB");
+        // Verify
+        assertEquals("RMB", currency.code);
+        // Teardown
+        currencyDatabase.deleteCurrency("RMB");
+    }
+
+    @Test
+    public void testCurrencyExists_ReturnFalse(){
+        // Exercise
+        boolean check = currencyDatabase.currencyExists("RMB");
+        // Verify
+        assertEquals(false, check);
+    }
+
+    @Test
+    public void testCurrencyExists_ReturnTrue() throws Exception{
+        // Setup
+        currencyDatabase.addCurrency(new Currency("RMB", "Renminbi", true));
+        // Exercise
+        boolean check = currencyDatabase.currencyExists("RMB");
+        // Verify
+        assertEquals(check, true);
+        // Teardown
+        currencyDatabase.deleteCurrency("RMB");
+    }
+
+    @Test
+    public void testGetCurrencies_ReturnPopulatedList() throws Exception {
+        // Setup
+        currencyDatabase.addCurrency(new Currency("RMB", "Renminbi", true));
+        // Exercise
+        List<Currency> testList = currencyDatabase.getCurrencies();
+        // Verify
+        assertTrue(testList.size() > 0);
+        // Teardown
+        currencyDatabase.deleteCurrency("RMB");
+    }
+
+    @Test
+    public void testGetCurrencies_ReturnEmptyList() throws Exception {
+        // Exercise
+        List<Currency> testList = currencyDatabase.getCurrencies();
+        // Verify
+        assertTrue(testList.isEmpty());
+    }
+
+    @Test
+    public void testGetMajorCurrencies_ReturnPopulatedList() throws Exception {
+        // Setup
+        currencyDatabase.addCurrency(new Currency("RMB", "Renminbi", true));
+        // Exercise
+        List<Currency> testList = currencyDatabase.getMajorCurrencies();
+        // Verify
+        assertTrue(testList.size() > 0);
+        // Teardown
+        currencyDatabase.deleteCurrency("RMB");
+    }
+
+//    @Test
+//    public void testGetMajorCurrencies_ReturnEmptyDefaultList() throws Exception {
+//        // Setup
+//    }
 }

@@ -26,3 +26,7 @@ Any changes to the currency list is made to the array list. Once a change ot the
 is called to write and reflect the changes in the currencies.txt file.
 The initial data in the database is actually retrieve from the currencies.txt located
 in the resource folder. The init() method's task is to write up and add them to the database.
+
+I added a 5 liner to the setup() method so that the database is 100% clean before starting the tests.
+I have decided not to re-introduce the default 5 in the teardown - simply because they can be recreated via
+a build. 
