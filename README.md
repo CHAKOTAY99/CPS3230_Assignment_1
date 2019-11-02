@@ -24,3 +24,5 @@ is generated. When this file does indeed exist - the program takes the list of c
 and not from the one provided at the start of the program when the array list was empty.
 Any changes to the currency list is made to the array list. Once a change ot the array list occurs, the persist() method
 is called to write and reflect the changes in the currencies.txt file.
+The initial data in the database is actually retrieve from the currencies.txt located
+in the resource folder. The init() method's task is to write up and add them to the database.
