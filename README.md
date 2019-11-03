@@ -33,3 +33,7 @@ a build.
 
 What I have noticed is that I should have mocked the database so that all of the tests cases do not
 effect the database.
+
+04/11/2019: Finally fixed the clean database at the start of each test problem. We could probably now remove all the teardown
+methods which exist in each individual test. Whilst this is great - in part 3 I will be changing everything
+to mocks as this is very poor testing

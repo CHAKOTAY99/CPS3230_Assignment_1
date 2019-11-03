@@ -8,6 +8,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -20,22 +21,14 @@ public class CurrencyDatabaseTest {
     public void setup() throws Exception {
         currencyDatabase = new CurrencyDatabase();
         // Clean Database
+        List<String> currencyCodes = new ArrayList<>();
         List<Currency> initialDatabase = currencyDatabase.getCurrencies();
-//        if(!initialDatabase.isEmpty()){
-//            for(Currency currency : initialDatabase){
-//                currencyDatabase.deleteCurrency(currency.code);
-//                initialDatabase.remove(currency);
-//            }
-//        }
-//
-//        if(!initialDatabase.isEmpty()){
-//            Iterator<Currency> iterator = initialDatabase.iterator();
-//            while(iterator.hasNext()){
-//                Currency aCurrency = iterator.next();
-//                currencyDatabase.deleteCurrency(aCurrency.code);
-//                iterator.remove();
-//            }
-//        }
+        for(Currency currency : initialDatabase){
+            currencyCodes.add(currency.code);
+        }
+        for(String currencyCode : currencyCodes){
+            currencyDatabase.deleteCurrency(currencyCode);
+        }
     }
 
     @After
