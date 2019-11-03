@@ -30,3 +30,6 @@ in the resource folder. The init() method's task is to write up and add them to 
 I added a 5 liner to the setup() method so that the database is 100% clean before starting the tests.
 I have decided not to re-introduce the default 5 in the teardown - simply because they can be recreated via
 a build. 
+
+What I have noticed is that I should have mocked the database so that all of the tests cases do not
+effect the database.
