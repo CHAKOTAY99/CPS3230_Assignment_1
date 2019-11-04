@@ -6,8 +6,6 @@ import edu.uom.currencymanager.currencies.ExchangeRate;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.Mockito;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,12 +30,12 @@ public class CurrencyDatabaseTest {
     }
 
     @After
-    public void teardown(){
+    public void teardown() {
         currencyDatabase = null;
     }
 
     @Test
-    public void testCurrencyByCode_NotExist(){
+    public void testCurrencyByCode_NotExist() {
         // Exercise
         Currency currency = currencyDatabase.getCurrencyByCode(null);
         // Verify
@@ -57,7 +55,7 @@ public class CurrencyDatabaseTest {
     }
 
     @Test
-    public void testCurrencyExists_ReturnFalse(){
+    public void testCurrencyExists_ReturnFalse() {
         // Exercise
         boolean check = currencyDatabase.currencyExists("RMB");
         // Verify
@@ -65,7 +63,7 @@ public class CurrencyDatabaseTest {
     }
 
     @Test
-    public void testCurrencyExists_ReturnTrue() throws Exception{
+    public void testCurrencyExists_ReturnTrue() throws Exception {
         // Setup
         currencyDatabase.addCurrency(new Currency("RMB", "Renminbi", true));
         // Exercise
@@ -126,8 +124,8 @@ public class CurrencyDatabaseTest {
         currencyDatabase.addCurrency(new Currency("EGP", "Egyptian Pound", false));
         // Exercise
         try {
-        currencyDatabase.getExchangeRate("RMB", "EGP");
-        } catch(Exception exception){
+            currencyDatabase.getExchangeRate("RMB", "EGP");
+        } catch (Exception exception) {
             assertEquals("Unkown currency: RMB", exception.getMessage());
         }
         // Teardown
@@ -141,7 +139,7 @@ public class CurrencyDatabaseTest {
         // Exercise
         try {
             currencyDatabase.getExchangeRate("EGP", "RMB");
-        } catch(Exception exception){
+        } catch (Exception exception) {
             assertEquals("Unkown currency: RMB", exception.getMessage());
         }
         // Teardown
@@ -160,7 +158,7 @@ public class CurrencyDatabaseTest {
         ExchangeRate result = currencyDatabase.getExchangeRate("EGP", "RMB");
         result.rate = 0.52;
         // Verify
-        assertEquals("EGP 1 = RMB "+exchangeRate.rate+"", result.toString());
+        assertEquals("EGP 1 = RMB " + exchangeRate.rate + "", result.toString());
         // Teardown
         currencyDatabase.deleteCurrency("EGP");
         currencyDatabase.deleteCurrency("RMB");
@@ -185,7 +183,7 @@ public class CurrencyDatabaseTest {
     }
 
     @Test
-    public void testAddCurrency() throws Exception{
+    public void testAddCurrency() throws Exception {
         // Exercise
         currencyDatabase.addCurrency(new Currency("EGP", "Egyptian Pound", false));
         currencyDatabase.addCurrency(new Currency("RMB", "Renminbi", true));
@@ -198,7 +196,7 @@ public class CurrencyDatabaseTest {
     }
 
     @Test
-    public void testDeleteCurrency() throws Exception{
+    public void testDeleteCurrency() throws Exception {
         // Setup
         currencyDatabase.addCurrency(new Currency("EGP", "Egyptian Pound", false));
         currencyDatabase.addCurrency(new Currency("RMB", "Renminbi", true));

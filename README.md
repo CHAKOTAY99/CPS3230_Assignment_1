@@ -36,4 +36,21 @@ effect the database.
 
 04/11/2019: Finally fixed the clean database at the start of each test problem. We could probably now remove all the teardown
 methods which exist in each individual test. Whilst this is great - in part 3 I will be changing everything
-to mocks as this is very poor testing
+to mocks as this is very poor testing.
+
+The persist() method cannot be directly tested as it is run every time a currency is written to disk.
+Its performance is directly correlated with the addCurrency() and deleteCurrent(), as neither of their tests
+would have been successful if not for the effectiveness of persist().
+
+Added a helper class to be able to test the init() method. It was not possible to not apply the @Before and @After to these tests
+so it was best to place them into their own helper class.
+
+Now it is important to remember that from the init() perspective - the checking of the lines are done when reading the txt file.
+Validation such as not entering a currency with more or less than three characters and other such systems do not happen at the init() level.
+init() simply makes sure that at the start of the program, the provided currencies are entered correctly.
+I noticed also that when entering a new currency in the fields, it is allowing ',' to be entered. When restarting the program these get
+flagged, which is very bad.
+
+On another note, in the CurrencyDatabase - adding a new Currency here does not require any validation. That happens in a separate class.
+
+04/11/2019 Basic Unit Testing on CurrencyDatabase has been completed
