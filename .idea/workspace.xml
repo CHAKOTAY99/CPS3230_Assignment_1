@@ -1,23 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="695003a6-cc6f-41b7-81e8-debdc963a4f4" name="Default Changelist" comment="" />
+    <list default="true" id="695003a6-cc6f-41b7-81e8-debdc963a4f4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/edu/uom/currencymanager/CurrencyDatabaseHelperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/uom/currencymanager/CurrencyDatabaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/uom/currencymanager/CurrencyDatabaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/currencies.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/currencies.txt" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="255" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1SEm5EI67OzjsNPpowB0Qvbczuf" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -29,7 +43,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
@@ -51,7 +65,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.CurrencyDatabaseHelperTest">
     <configuration name="CurrencyManager" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="edu.uom.currencymanager.CurrencyManager" />
       <module name="currencymanager" />
@@ -65,8 +79,74 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CurrencyDatabaseHelperTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="currencymanager" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.uom.currencymanager.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.uom.currencymanager" />
+      <option name="MAIN_CLASS_NAME" value="edu.uom.currencymanager.CurrencyDatabaseHelperTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CurrencyDatabaseHelperTest.testInit_throwExceptionOnDoubleComma" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="currencymanager" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.uom.currencymanager.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.uom.currencymanager" />
+      <option name="MAIN_CLASS_NAME" value="edu.uom.currencymanager.CurrencyDatabaseHelperTest" />
+      <option name="METHOD_NAME" value="testInit_throwExceptionOnDoubleComma" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CurrencyDatabaseHelperTest.testInit_throwExceptionOnIncorrectCurrencyCode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="currencymanager" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.uom.currencymanager.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.uom.currencymanager" />
+      <option name="MAIN_CLASS_NAME" value="edu.uom.currencymanager.CurrencyDatabaseHelperTest" />
+      <option name="METHOD_NAME" value="testInit_throwExceptionOnIncorrectCurrencyCode" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CurrencyDatabaseTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="currencymanager" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.uom.currencymanager.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.uom.currencymanager" />
+      <option name="MAIN_CLASS_NAME" value="edu.uom.currencymanager.CurrencyDatabaseTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CurrencyDatabaseHelperTest" />
+        <item itemvalue="JUnit.CurrencyDatabaseTest" />
+        <item itemvalue="JUnit.CurrencyDatabaseHelperTest.testInit_throwExceptionOnIncorrectCurrencyCode" />
+        <item itemvalue="JUnit.CurrencyDatabaseHelperTest.testInit_throwExceptionOnDoubleComma" />
         <item itemvalue="Application.CurrencyManager" />
       </list>
     </recent_temporary>
@@ -87,21 +167,64 @@
       <workItem from="1571393162890" duration="5000" />
       <workItem from="1571814743866" duration="586000" />
       <workItem from="1572613670801" duration="538000" />
+      <workItem from="1572642291715" duration="3896000" />
+      <workItem from="1572686576560" duration="11905000" />
+      <workItem from="1572711211909" duration="5470000" />
+      <workItem from="1572768294512" duration="15024000" />
+      <workItem from="1572856809447" duration="6594000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/edu/uom/currencymanager/CurrencyManager.java</url>
-          <line>143</line>
-          <option name="timeStamp" value="5" />
+          <line>55</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/uom/currencymanager/currencies/CurrencyDatabase.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/CPS3230_Assignment_1$CurrencyDatabaseTest_initFileFailure_throwException.ic" NAME="CurrencyDatabaseTest.initFileFailure_throwException Coverage Results" MODIFIED="1572689671584" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>edu.uom.currencymanager.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/CPS3230_Assignment_1$CurrencyDatabaseHelperTest.ic" NAME="CurrencyDatabaseHelperTest Coverage Results" MODIFIED="1572874337667" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>edu.uom.currencymanager.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/CPS3230_Assignment_1$CurrencyDatabaseTest_testGetExchangeRate_TimeExceeded.ic" NAME="CurrencyDatabaseTest.testGetExchangeRate_TimeExceeded Coverage Results" MODIFIED="1572791477500" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>edu.uom.currencymanager.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/CPS3230_Assignment_1$CurrencyDatabaseTest_testInit_throwExceptionOnFirstLine.ic" NAME="CurrencyDatabaseTest.testInit_throwExceptionOnFirstLine Coverage Results" MODIFIED="1572858861720" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>edu.uom.currencymanager.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/CPS3230_Assignment_1$CurrencyDatabaseTest.ic" NAME="CurrencyDatabaseTest Coverage Results" MODIFIED="1572874328404" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>edu.uom.currencymanager.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/CPS3230_Assignment_1$CurrencyDatabaseTest_testGetCurrencies_ReturnPopulatedList.ic" NAME="CurrencyDatabaseTest.testGetCurrencies_ReturnPopulatedList Coverage Results" MODIFIED="1572710708903" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>edu.uom.currencymanager.*</FILTER>
+    </SUITE>
   </component>
 </project>
