@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="695003a6-cc6f-41b7-81e8-debdc963a4f4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/edu/uom/currencymanager/CurrencyManagerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/uom/currencymanager/currencyServer/DefaultCurrencyServerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/uom/currencymanager/currencyServer/DefaultCurrencyServerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/currencies.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/currencies.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/uom/currencymanager/currencyServer/DefaultCurrencyServerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/uom/currencymanager/currencyserver/DefaultCurrencyServerTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -85,7 +86,7 @@
       <module name="currencymanager" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="edu.uom.currencymanager.currencyServer.*" />
+          <option name="PATTERN" value="edu.uom.currencymanager.currencyserver.*" />
           <option name="ENABLED" value="true" />
         </pattern>
         <pattern>
@@ -93,8 +94,8 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="edu.uom.currencymanager.currencyServer" />
-      <option name="MAIN_CLASS_NAME" value="edu.uom.currencymanager.currencyServer.DefaultCurrencyServerTest" />
+      <option name="PACKAGE_NAME" value="edu.uom.currencymanager.currencyserver" />
+      <option name="MAIN_CLASS_NAME" value="edu.uom.currencymanager.currencyserver.DefaultCurrencyServerTest" />
       <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
       <option name="PARAMETERS" value="" />
@@ -106,12 +107,12 @@
       <module name="currencymanager" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="edu.uom.currencymanager.currencyServer.*" />
+          <option name="PATTERN" value="edu.uom.currencymanager.currencyserver.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="edu.uom.currencymanager.currencyServer" />
-      <option name="MAIN_CLASS_NAME" value="edu.uom.currencymanager.currencyServer.DefaultCurrencyServerTest" />
+      <option name="PACKAGE_NAME" value="edu.uom.currencymanager.currencyserver" />
+      <option name="MAIN_CLASS_NAME" value="edu.uom.currencymanager.currencyserver.DefaultCurrencyServerTest" />
       <option name="METHOD_NAME" value="test_getExchangeRateResult" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -185,7 +186,7 @@
       <workItem from="1572686576560" duration="11905000" />
       <workItem from="1572711211909" duration="5470000" />
       <workItem from="1572768294512" duration="15024000" />
-      <workItem from="1572856809447" duration="22402000" />
+      <workItem from="1572856809447" duration="23971000" />
     </task>
     <servers />
   </component>

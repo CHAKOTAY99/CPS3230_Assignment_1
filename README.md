@@ -54,3 +54,11 @@ flagged, which is very bad.
 On another note, in the CurrencyDatabase - adding a new Currency here does not require any validation. That happens in a separate class.
 
 04/11/2019 Basic Unit Testing on CurrencyDatabase has been completed
+Currency has been tested
+ExchangeRate has been tested
+Util has been tested
+DefaultCurrencyServer has been tested
+
+
+05/11/2019 Testing the main method is simply not possible. Whilst 100% code coverage would be great,
+it is impossible to test what is being told to the system.

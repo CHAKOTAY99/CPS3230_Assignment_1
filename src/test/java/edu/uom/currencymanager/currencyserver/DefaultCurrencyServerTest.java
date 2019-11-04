@@ -1,6 +1,5 @@
-package edu.uom.currencymanager.currencyServer;
+package edu.uom.currencymanager.currencyserver;
 
-import edu.uom.currencymanager.currencyserver.DefaultCurrencyServer;
 import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;
