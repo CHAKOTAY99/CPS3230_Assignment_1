@@ -1,4 +1,4 @@
-package edu.uom.currencymanager;
+package edu.uom.currencymanager.currencies;
 
 import edu.uom.currencymanager.currencies.CurrencyDatabase;
 import org.junit.Test;
@@ -78,6 +78,31 @@ public class CurrencyDatabaseHelperTest {
         } catch (Exception exp) {
             assertEquals("Invalid currency code detected:  EGP,Egyptian Pound,,no", exp.getMessage());
         }
+
+        // TearDown
+        BufferedWriter teardownWriter = new BufferedWriter(new FileWriter(currenciesFile));
+        teardownWriter.write("code,name,major");
+        teardownWriter.flush();
+        teardownWriter.close();
+    }
+
+    @Test
+    public void testInit_NonExistingCode() throws Exception{
+        // Setup
+        String currenciesFile = "target" + File.separator + "classes" + File.separator + "currencies.txt";
+
+        // Exercise
+        BufferedWriter writer = new BufferedWriter(new FileWriter(currenciesFile));
+        writer.write("code,name,major\n");
+        writer.write("EGP,Egyptian Pound,no\n");
+        writer.flush();
+        writer.close();
+
+        currencyDatabase = new CurrencyDatabase();
+        currencyDatabase.init();
+        // Verify
+        Currency currency = currencyDatabase.getCurrencyByCode("EGP");
+        assertEquals("EGP", currency.code);
 
         // TearDown
         BufferedWriter teardownWriter = new BufferedWriter(new FileWriter(currenciesFile));
