@@ -1,8 +1,5 @@
 package edu.uom.currencymanager.currencies;
 
-import edu.uom.currencymanager.currencies.Currency;
-import edu.uom.currencymanager.currencies.CurrencyDatabase;
-import edu.uom.currencymanager.currencies.ExchangeRate;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -30,7 +27,12 @@ public class CurrencyDatabaseTest {
     }
 
     @After
-    public void teardown() {
+    public void teardown() throws Exception{
+        currencyDatabase.addCurrency(new Currency("AUD", "Australian Dollar", false));
+        currencyDatabase.addCurrency(new Currency("EUR", "Euro", true));
+        currencyDatabase.addCurrency(new Currency("GBP", "British Pound", true));
+        currencyDatabase.addCurrency(new Currency("TRY", "Turkish Lira", false));
+        currencyDatabase.addCurrency(new Currency("USD", "US Dollar", true));
         currencyDatabase = null;
     }
 

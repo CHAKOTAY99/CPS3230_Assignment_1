@@ -3,8 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="695003a6-cc6f-41b7-81e8-debdc963a4f4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/edu/uom/currencymanager/CurrencyManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/uom/currencymanager/CurrencyManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/uom/currencymanager/currencies/CurrencyDatabaseHelperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/uom/currencymanager/currencies/CurrencyDatabaseHelperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/uom/currencymanager/currencies/CurrencyDatabaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/uom/currencymanager/currencies/CurrencyDatabaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/uom/currencymanager/currencies/ExchangeRateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/uom/currencymanager/currencies/ExchangeRateTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/currencies.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/currencies.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -66,8 +68,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.CurrencyManagerTest.testDeleteCurrency_SuccessWithException">
-    <configuration name="CurrencyManagerTest.testAddCurrency_Succeeds" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.CurrencyManagerTest">
+    <configuration name="CurrencyManagerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="currencymanager" />
       <extension name="coverage">
         <pattern>
@@ -77,90 +79,85 @@
       </extension>
       <option name="PACKAGE_NAME" value="edu.uom.currencymanager" />
       <option name="MAIN_CLASS_NAME" value="edu.uom.currencymanager.CurrencyManagerTest" />
-      <option name="METHOD_NAME" value="testAddCurrency_Succeeds" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CurrencyManagerTest.testAddCurrency_throwExceptionCurrencyAlreadyExists" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CurrencyTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="currencymanager" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="edu.uom.currencymanager.*" />
+          <option name="PATTERN" value="edu.uom.currencymanager.currencies.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="edu.uom.currencymanager" />
-      <option name="MAIN_CLASS_NAME" value="edu.uom.currencymanager.CurrencyManagerTest" />
-      <option name="METHOD_NAME" value="testAddCurrency_throwExceptionCurrencyAlreadyExists" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="edu.uom.currencymanager.currencies" />
+      <option name="MAIN_CLASS_NAME" value="edu.uom.currencymanager.currencies.CurrencyTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CurrencyManagerTest.testAddCurrency_throwExceptionNameMinimumNotMet" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DefaultCurrencyServerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="currencymanager" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="edu.uom.currencymanager.*" />
+          <option name="PATTERN" value="edu.uom.currencymanager.currencyserver.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="edu.uom.currencymanager" />
-      <option name="MAIN_CLASS_NAME" value="edu.uom.currencymanager.CurrencyManagerTest" />
-      <option name="METHOD_NAME" value="testAddCurrency_throwExceptionNameMinimumNotMet" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="edu.uom.currencymanager.currencyserver" />
+      <option name="MAIN_CLASS_NAME" value="edu.uom.currencymanager.currencyserver.DefaultCurrencyServerTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CurrencyManagerTest.testDeleteCurrency_ExceptionDoesNotExist" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ExchangeRateTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="currencymanager" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="edu.uom.currencymanager.*" />
+          <option name="PATTERN" value="edu.uom.currencymanager.currencies.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="edu.uom.currencymanager" />
-      <option name="MAIN_CLASS_NAME" value="edu.uom.currencymanager.CurrencyManagerTest" />
-      <option name="METHOD_NAME" value="testDeleteCurrency_ExceptionDoesNotExist" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="edu.uom.currencymanager.currencies" />
+      <option name="MAIN_CLASS_NAME" value="edu.uom.currencymanager.currencies.ExchangeRateTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CurrencyManagerTest.testDeleteCurrency_SuccessWithException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UtilTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="currencymanager" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="edu.uom.currencymanager.*" />
+          <option name="PATTERN" value="edu.uom.currencymanager.currencies.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="edu.uom.currencymanager" />
-      <option name="MAIN_CLASS_NAME" value="edu.uom.currencymanager.CurrencyManagerTest" />
-      <option name="METHOD_NAME" value="testDeleteCurrency_SuccessWithException" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="edu.uom.currencymanager.currencies" />
+      <option name="MAIN_CLASS_NAME" value="edu.uom.currencymanager.currencies.UtilTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.CurrencyManagerTest.testAddCurrency_throwExceptionNameMinimumNotMet" />
-      <item itemvalue="JUnit.CurrencyManagerTest.testAddCurrency_throwExceptionCurrencyAlreadyExists" />
-      <item itemvalue="JUnit.CurrencyManagerTest.testAddCurrency_Succeeds" />
-      <item itemvalue="JUnit.CurrencyManagerTest.testDeleteCurrency_ExceptionDoesNotExist" />
-      <item itemvalue="JUnit.CurrencyManagerTest.testDeleteCurrency_SuccessWithException" />
+      <item itemvalue="JUnit.CurrencyTest" />
+      <item itemvalue="JUnit.ExchangeRateTest" />
+      <item itemvalue="JUnit.UtilTest" />
+      <item itemvalue="JUnit.DefaultCurrencyServerTest" />
+      <item itemvalue="JUnit.CurrencyManagerTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CurrencyManagerTest.testDeleteCurrency_SuccessWithException" />
-        <item itemvalue="JUnit.CurrencyManagerTest.testDeleteCurrency_ExceptionDoesNotExist" />
-        <item itemvalue="JUnit.CurrencyManagerTest.testAddCurrency_Succeeds" />
-        <item itemvalue="JUnit.CurrencyManagerTest.testAddCurrency_throwExceptionCurrencyAlreadyExists" />
-        <item itemvalue="JUnit.CurrencyManagerTest.testAddCurrency_throwExceptionNameMinimumNotMet" />
+        <item itemvalue="JUnit.CurrencyManagerTest" />
+        <item itemvalue="JUnit.DefaultCurrencyServerTest" />
+        <item itemvalue="JUnit.UtilTest" />
+        <item itemvalue="JUnit.ExchangeRateTest" />
+        <item itemvalue="JUnit.CurrencyTest" />
       </list>
     </recent_temporary>
   </component>
@@ -185,6 +182,7 @@
       <workItem from="1572711211909" duration="5470000" />
       <workItem from="1572768294512" duration="15024000" />
       <workItem from="1572856809447" duration="23971000" />
+      <workItem from="1572987877081" duration="959000" />
     </task>
     <servers />
   </component>
@@ -219,25 +217,28 @@
     <SUITE FILE_PATH="coverage/CPS3230_Assignment_1$CurrencyDatabaseTest_initFileFailure_throwException.ic" NAME="CurrencyDatabaseTest.initFileFailure_throwException Coverage Results" MODIFIED="1572689671584" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>edu.uom.currencymanager.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/CPS3230_Assignment_1$CurrencyDatabaseHelperTest.ic" NAME="CurrencyDatabaseHelperTest Coverage Results" MODIFIED="1572908146208" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/CPS3230_Assignment_1$CurrencyDatabaseHelperTest.ic" NAME="CurrencyDatabaseHelperTest Coverage Results" MODIFIED="1572988897026" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>edu.uom.currencymanager.currencies.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/CPS3230_Assignment_1$CurrencyTest.ic" NAME="CurrencyTest Coverage Results" MODIFIED="1572908178648" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/CPS3230_Assignment_1$CurrencyManagerTest.ic" NAME="CurrencyManagerTest Coverage Results" MODIFIED="1572988951320" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>edu.uom.currencymanager.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/CPS3230_Assignment_1$CurrencyTest.ic" NAME="CurrencyTest Coverage Results" MODIFIED="1572988917860" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>edu.uom.currencymanager.currencies.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/CPS3230_Assignment_1$CurrencyDatabaseTest_testGetExchangeRate_TimeExceeded.ic" NAME="CurrencyDatabaseTest.testGetExchangeRate_TimeExceeded Coverage Results" MODIFIED="1572791477500" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>edu.uom.currencymanager.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/CPS3230_Assignment_1$UtilTest.ic" NAME="UtilTest Coverage Results" MODIFIED="1572908189788" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/CPS3230_Assignment_1$UtilTest.ic" NAME="UtilTest Coverage Results" MODIFIED="1572988935898" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>edu.uom.currencymanager.currencies.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/CPS3230_Assignment_1$ExchangeRateTest.ic" NAME="ExchangeRateTest Coverage Results" MODIFIED="1572908184109" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/CPS3230_Assignment_1$ExchangeRateTest.ic" NAME="ExchangeRateTest Coverage Results" MODIFIED="1572988926645" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>edu.uom.currencymanager.currencies.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/CPS3230_Assignment_1$CurrencyDatabaseTest_testInit_throwExceptionOnFirstLine.ic" NAME="CurrencyDatabaseTest.testInit_throwExceptionOnFirstLine Coverage Results" MODIFIED="1572858861720" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>edu.uom.currencymanager.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/CPS3230_Assignment_1$CurrencyDatabaseTest.ic" NAME="CurrencyDatabaseTest Coverage Results" MODIFIED="1572908166300" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/CPS3230_Assignment_1$CurrencyDatabaseTest.ic" NAME="CurrencyDatabaseTest Coverage Results" MODIFIED="1572988909406" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>edu.uom.currencymanager.currencies.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/CPS3230_Assignment_1$CurrencyDatabaseTest_testGetCurrencies_ReturnPopulatedList.ic" NAME="CurrencyDatabaseTest.testGetCurrencies_ReturnPopulatedList Coverage Results" MODIFIED="1572710708903" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -246,9 +247,8 @@
     <SUITE FILE_PATH="coverage/CPS3230_Assignment_1$DefaultCurrencyServerTest_test_getExchangeRateResult.ic" NAME="DefaultCurrencyServerTest.test_getExchangeRateResult Coverage Results" MODIFIED="1572908946036" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>edu.uom.currencymanager.currencyServer.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/CPS3230_Assignment_1$DefaultCurrencyServerTest.ic" NAME="DefaultCurrencyServerTest Coverage Results" MODIFIED="1572909171683" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>edu.uom.currencymanager.currencyServer.*</FILTER>
-      <FILTER>edu.uom.currencymanager.currencyserver.DefaultCurrencyServer</FILTER>
+    <SUITE FILE_PATH="coverage/CPS3230_Assignment_1$DefaultCurrencyServerTest.ic" NAME="DefaultCurrencyServerTest Coverage Results" MODIFIED="1572988944004" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>edu.uom.currencymanager.currencyserver.*</FILTER>
     </SUITE>
   </component>
 </project>

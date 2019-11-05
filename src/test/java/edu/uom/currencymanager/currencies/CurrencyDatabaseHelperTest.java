@@ -1,6 +1,5 @@
 package edu.uom.currencymanager.currencies;
 
-import edu.uom.currencymanager.currencies.CurrencyDatabase;
 import org.junit.Test;
 
 import java.io.BufferedWriter;
