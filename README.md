@@ -66,3 +66,26 @@ it is impossible to test what is being told to the system.
 Whilst I have progressed in Task 2, I am not happy that all my tests are interacting with the currencies.txt file. Tests
 should not be interacting with the actual database. Before moving to Task 3, I will investigate and attempt to fix this issue by mocking or
 by a spy. I personally prefer mocks for simplicity.
+
+Whilst I have managed to successfully mock CurrencyDatabase - I have noticed from the various sources which
+I was taking information from that making use of mocks for the sake of using them is not recommended. Thus below
+I will be listing what a system under test is and when mocks, spies and studs should be used. And if mocks could be used in SUT's.
+
+System Under Test:
+A system under test from a Unit Testing perspective represents all of the classes in a test which are not mocks or stubs.
+http://xunitpatterns.com/SUT.html
+It is always defined from the perspective of the test. It is not clear if depended-on components can be added under the SUT
+
+In fact according to this source https://thoughtbot.com/blog/don-t-stub-the-system-under-test the Depended-On component should be
+tested with a test double or the like. It is tempting to stub parts of a SUT (Which I want to do) and should be avioded.
+
+Stubs vs Mocks
+A stub defines specific behavior for an object's method. A mock acts as a stand-in object for another.
+
+You should use a stub if you a unit test which already does the piece of functionality.
+
+Mocking or stubbing is recommended when the code uses external dependencies like system calls or accessing a database.
+https://circleci.com/blog/how-to-test-software-part-i-mocking-stubbing-and-contract-testing/
+So this source agreed with my attempt to not write to the database.
+
+In fact talking to the database is a bad unit test
