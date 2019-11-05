@@ -62,3 +62,7 @@ DefaultCurrencyServer has been tested
 
 05/11/2019 Testing the main method is simply not possible. Whilst 100% code coverage would be great,
 it is impossible to test what is being told to the system.
+
+Whilst I have progressed in Task 2, I am not happy that all my tests are interacting with the currencies.txt file. Tests
+should not be interacting with the actual database. Before moving to Task 3, I will investigate and attempt to fix this issue by mocking or
+by a spy. I personally prefer mocks for simplicity.
