@@ -89,3 +89,13 @@ https://circleci.com/blog/how-to-test-software-part-i-mocking-stubbing-and-contr
 So this source agreed with my attempt to not write to the database.
 
 In fact talking to the database is a bad unit test
+
+As of 15/11/2019 I have decided to allow Task 2 tests to remain and not add mocks now. Its because the tests written under Task 2 are to be simple and easy to understand and test.
+They do break good principles of testing as they interact with the database which I do not agree with. It has been decided to allow these glaring issues so that the code
+can be refactored in Part 3 of this assignment.
+
+CurrencyDatabaseHelperTest: These tests have been separated from the others because they have different requirements in order to run.
+These tests are all for the init() method which tests the initial file at the start of the program. It retrieves the names located in the currencies.txt file
+to start the initial tests.
+
+Sticking with the naming convention taken with the tests, each name provides a clear goal to what the test is to achieve. 
