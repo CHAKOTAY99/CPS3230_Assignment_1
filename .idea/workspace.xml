@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="695003a6-cc6f-41b7-81e8-debdc963a4f4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/uom/currencymanager/currencies/CurrencyDatabaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/uom/currencymanager/currencies/CurrencyDatabaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/uom/currencymanager/CurrencyManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/uom/currencymanager/CurrencyManagerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/currencies.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/currencies.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -65,100 +66,101 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.CurrencyDatabaseTest.testCurrencyExists_ReturnFalse">
-    <configuration name="CurrencyDatabaseTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.CurrencyManagerTest.testDeleteCurrency_SuccessWithException">
+    <configuration name="CurrencyManagerTest.testAddCurrency_Succeeds" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="currencymanager" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="edu.uom.currencymanager.currencies.*" />
+          <option name="PATTERN" value="edu.uom.currencymanager.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="edu.uom.currencymanager.currencies" />
-      <option name="MAIN_CLASS_NAME" value="edu.uom.currencymanager.currencies.CurrencyDatabaseTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CurrencyDatabaseTest.testCurrencyByCode_Default" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="currencymanager" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.uom.currencymanager.currencies.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.uom.currencymanager.currencies" />
-      <option name="MAIN_CLASS_NAME" value="edu.uom.currencymanager.currencies.CurrencyDatabaseTest" />
-      <option name="METHOD_NAME" value="testCurrencyByCode_Default" />
+      <option name="PACKAGE_NAME" value="edu.uom.currencymanager" />
+      <option name="MAIN_CLASS_NAME" value="edu.uom.currencymanager.CurrencyManagerTest" />
+      <option name="METHOD_NAME" value="testAddCurrency_Succeeds" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CurrencyDatabaseTest.testCurrencyByCode_NotExist" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CurrencyManagerTest.testAddCurrency_throwExceptionCurrencyAlreadyExists" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="currencymanager" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="edu.uom.currencymanager.currencies.*" />
+          <option name="PATTERN" value="edu.uom.currencymanager.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="edu.uom.currencymanager.currencies" />
-      <option name="MAIN_CLASS_NAME" value="edu.uom.currencymanager.currencies.CurrencyDatabaseTest" />
-      <option name="METHOD_NAME" value="testCurrencyByCode_NotExist" />
+      <option name="PACKAGE_NAME" value="edu.uom.currencymanager" />
+      <option name="MAIN_CLASS_NAME" value="edu.uom.currencymanager.CurrencyManagerTest" />
+      <option name="METHOD_NAME" value="testAddCurrency_throwExceptionCurrencyAlreadyExists" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CurrencyDatabaseTest.testCurrencyExists_ReturnFalse" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CurrencyManagerTest.testAddCurrency_throwExceptionNameMinimumNotMet" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="currencymanager" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="edu.uom.currencymanager.currencies.*" />
+          <option name="PATTERN" value="edu.uom.currencymanager.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="edu.uom.currencymanager.currencies" />
-      <option name="MAIN_CLASS_NAME" value="edu.uom.currencymanager.currencies.CurrencyDatabaseTest" />
-      <option name="METHOD_NAME" value="testCurrencyExists_ReturnFalse" />
+      <option name="PACKAGE_NAME" value="edu.uom.currencymanager" />
+      <option name="MAIN_CLASS_NAME" value="edu.uom.currencymanager.CurrencyManagerTest" />
+      <option name="METHOD_NAME" value="testAddCurrency_throwExceptionNameMinimumNotMet" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CurrencyDatabaseTest.testGetExchangeRate_ExceptionUnknownSource" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CurrencyManagerTest.testDeleteCurrency_ExceptionDoesNotExist" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="currencymanager" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="edu.uom.currencymanager.currencies.*" />
+          <option name="PATTERN" value="edu.uom.currencymanager.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="edu.uom.currencymanager.currencies" />
-      <option name="MAIN_CLASS_NAME" value="edu.uom.currencymanager.currencies.CurrencyDatabaseTest" />
-      <option name="METHOD_NAME" value="testGetExchangeRate_ExceptionUnknownSource" />
+      <option name="PACKAGE_NAME" value="edu.uom.currencymanager" />
+      <option name="MAIN_CLASS_NAME" value="edu.uom.currencymanager.CurrencyManagerTest" />
+      <option name="METHOD_NAME" value="testDeleteCurrency_ExceptionDoesNotExist" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CurrencyManagerTest.testDeleteCurrency_SuccessWithException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="currencymanager" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.uom.currencymanager.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.uom.currencymanager" />
+      <option name="MAIN_CLASS_NAME" value="edu.uom.currencymanager.CurrencyManagerTest" />
+      <option name="METHOD_NAME" value="testDeleteCurrency_SuccessWithException" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.CurrencyDatabaseTest.testCurrencyByCode_NotExist" />
-      <item itemvalue="JUnit.CurrencyDatabaseTest.testCurrencyByCode_Default" />
-      <item itemvalue="JUnit.CurrencyDatabaseTest.testGetExchangeRate_ExceptionUnknownSource" />
-      <item itemvalue="JUnit.CurrencyDatabaseTest" />
-      <item itemvalue="JUnit.CurrencyDatabaseTest.testCurrencyExists_ReturnFalse" />
+      <item itemvalue="JUnit.CurrencyManagerTest.testAddCurrency_throwExceptionNameMinimumNotMet" />
+      <item itemvalue="JUnit.CurrencyManagerTest.testAddCurrency_throwExceptionCurrencyAlreadyExists" />
+      <item itemvalue="JUnit.CurrencyManagerTest.testAddCurrency_Succeeds" />
+      <item itemvalue="JUnit.CurrencyManagerTest.testDeleteCurrency_ExceptionDoesNotExist" />
+      <item itemvalue="JUnit.CurrencyManagerTest.testDeleteCurrency_SuccessWithException" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CurrencyDatabaseTest.testCurrencyExists_ReturnFalse" />
-        <item itemvalue="JUnit.CurrencyDatabaseTest" />
-        <item itemvalue="JUnit.CurrencyDatabaseTest.testGetExchangeRate_ExceptionUnknownSource" />
-        <item itemvalue="JUnit.CurrencyDatabaseTest.testCurrencyByCode_Default" />
-        <item itemvalue="JUnit.CurrencyDatabaseTest.testCurrencyByCode_NotExist" />
+        <item itemvalue="JUnit.CurrencyManagerTest.testDeleteCurrency_SuccessWithException" />
+        <item itemvalue="JUnit.CurrencyManagerTest.testDeleteCurrency_ExceptionDoesNotExist" />
+        <item itemvalue="JUnit.CurrencyManagerTest.testAddCurrency_Succeeds" />
+        <item itemvalue="JUnit.CurrencyManagerTest.testAddCurrency_throwExceptionCurrencyAlreadyExists" />
+        <item itemvalue="JUnit.CurrencyManagerTest.testAddCurrency_throwExceptionNameMinimumNotMet" />
       </list>
     </recent_temporary>
   </component>
@@ -183,7 +185,6 @@
       <workItem from="1572711211909" duration="5470000" />
       <workItem from="1572768294512" duration="15024000" />
       <workItem from="1572856809447" duration="23971000" />
-      <workItem from="1572963212401" duration="5655000" />
     </task>
     <servers />
   </component>

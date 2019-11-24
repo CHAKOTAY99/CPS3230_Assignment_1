@@ -6,9 +6,6 @@ import edu.uom.currencymanager.currencies.ExchangeRate;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.Mock;
-import org.mockito.Mockito;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,28 +17,25 @@ public class CurrencyDatabaseTest {
 
     @Before
     public void setup() throws Exception {
-        currencyDatabase = Mockito.mock(CurrencyDatabase.class);
-//        currencyDatabase = new CurrencyDatabase();
+        currencyDatabase = new CurrencyDatabase();
         // Clean Database
-//        List<String> currencyCodes = new ArrayList<>();
-//        List<Currency> initialDatabase = currencyDatabase.getCurrencies();
-//        for(Currency currency : initialDatabase){
-//            currencyCodes.add(currency.code);
-//        }
-//        for(String currencyCode : currencyCodes){
-//            currencyDatabase.deleteCurrency(currencyCode);
-//        }
+        List<String> currencyCodes = new ArrayList<>();
+        List<Currency> initialDatabase = currencyDatabase.getCurrencies();
+        for(Currency currency : initialDatabase){
+            currencyCodes.add(currency.code);
+        }
+        for(String currencyCode : currencyCodes){
+            currencyDatabase.deleteCurrency(currencyCode);
+        }
     }
 
     @After
     public void teardown() {
-//        currencyDatabase = null;
+        currencyDatabase = null;
     }
 
     @Test
     public void testCurrencyByCode_NotExist() {
-        // Setup
-        Mockito.when(currencyDatabase.getCurrencyByCode(null)).thenReturn(null);
         // Exercise
         Currency currency = currencyDatabase.getCurrencyByCode(null);
         // Verify
@@ -50,21 +44,18 @@ public class CurrencyDatabaseTest {
 
     @Test
     public void testCurrencyByCode_Default() throws Exception {
-//        Mockito.doReturn(new Currency("RMB", "Renminbi", true)).when(currencyDatabase).addCurrency(new Currency("RMB", "Renminbi", true));
-        Mockito.doReturn(new Currency("RMB", "Renminbi", true)).when(currencyDatabase).getCurrencyByCode("RMB");
         // Setup
-//        currencyDatabase.addCurrency(new Currency("RMB", "Renminbi", true));
+        currencyDatabase.addCurrency(new Currency("RMB", "Renminbi", true));
         // Exercise
         Currency currency = currencyDatabase.getCurrencyByCode("RMB");
         // Verify
         assertEquals("RMB", currency.code);
         // Teardown
-//        currencyDatabase.deleteCurrency("RMB");
+        currencyDatabase.deleteCurrency("RMB");
     }
 
     @Test
     public void testCurrencyExists_ReturnFalse() {
-        Mockito.doReturn(false).when(currencyDatabase).currencyExists("RMB");
         // Exercise
         boolean check = currencyDatabase.currencyExists("RMB");
         // Verify
@@ -73,7 +64,6 @@ public class CurrencyDatabaseTest {
 
     @Test
     public void testCurrencyExists_ReturnTrue() throws Exception {
-        Mockito.doReturn(true)
         // Setup
         currencyDatabase.addCurrency(new Currency("RMB", "Renminbi", true));
         // Exercise
