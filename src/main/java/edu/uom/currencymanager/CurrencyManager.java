@@ -68,6 +68,7 @@ public class CurrencyManager {
                     } catch (Exception e) {
                         System.out.println(e.getMessage());
                     }
+                    break;
                 case 4:
                     System.out.print("\nEnter the currency code: ");
                     String code = sc.next().toUpperCase();
