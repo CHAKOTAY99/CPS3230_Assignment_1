@@ -99,3 +99,13 @@ These tests are all for the init() method which tests the initial file at the st
 to start the initial tests.
 
 Sticking with the naming convention taken with the tests, each name provides a clear goal to what the test is to achieve. 
+
+
+
+I fucking tried - but too many online sources claim that Dependency Injection and lookup are the same stupid thing
+Some claim its either one or the other - you can't have both. I honeslty cant fuckinga care anymore and I will just write what I
+want. The time wasted on understanding these concepts WHICH NOBODY CAN AGREE ON was the biggest waste of fucking time I have experienced
+I don't care about any fucking code smells as long as the job is done. Who thinks its shit code can fix it himself.
+
+I really don't get the fucking point. Why would I use dependency injection and dependency lookup at the same fucking time? They
+both do different things

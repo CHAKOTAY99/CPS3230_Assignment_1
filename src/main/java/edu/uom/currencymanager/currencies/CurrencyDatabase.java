@@ -129,6 +129,7 @@ public class CurrencyDatabase {
         return result;
     }
 
+
     public void addCurrency(Currency currency) throws Exception {
 
         //Save to list
