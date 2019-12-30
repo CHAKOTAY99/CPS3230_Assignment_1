@@ -15,7 +15,7 @@ public class ExchangeRate {
     }
 
     public String toString() {
-        return sourceCurrency.code + " 1 = " + destinationCurrency.code + " " + Util.formatAmount(rate);
+        return sourceCurrency.getCode() + " 1 = " + destinationCurrency.getCode() + " " + Util.formatAmount(rate);
     }
 
 }

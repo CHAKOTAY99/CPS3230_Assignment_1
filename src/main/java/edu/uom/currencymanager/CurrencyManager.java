@@ -113,7 +113,7 @@ public class CurrencyManager {
         for (Currency src : currencies) {
             for (Currency dst : currencies) {
                 if (src != dst) {
-                    exchangeRates.add(currencyDatabase.getExchangeRate(src.code, dst.code));
+                    exchangeRates.add(currencyDatabase.getExchangeRate(src.getCode(), dst.getCode()));
                 }
             }
         }
@@ -142,7 +142,7 @@ public class CurrencyManager {
         }
 
         //Add currency to database
-        currencyDatabase.addCurrency(new Currency(code,name,major));
+        currencyDatabase.addCurrency(Currency.createCurrency(code,name,major));
 
     }
 

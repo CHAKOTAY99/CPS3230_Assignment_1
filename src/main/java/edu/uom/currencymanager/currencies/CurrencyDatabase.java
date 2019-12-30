@@ -49,12 +49,12 @@ public class CurrencyDatabase {
 
             Currency currency = Currency.fromString(nextLine);
 
-            if (currency.code.length() == 3) {
-                if (!currencyExists(currency.code)) {
+            if (currency.getCode().length() == 3) {
+                if (!currencyExists(currency.getCode())) {
                     currencies.add(currency);
                 }
             } else {
-                System.err.println("Invalid currency code detected: " + currency.code);
+                System.err.println("Invalid currency code detected: " + currency.getCode());
             }
         }
     }
@@ -62,7 +62,7 @@ public class CurrencyDatabase {
     public Currency getCurrencyByCode(String code) {
 
         for (Currency currency : currencies) {
-            if (currency.code.equalsIgnoreCase(code)) {
+            if (currency.getCode().equalsIgnoreCase(code)) {
                 return currency;
             }
         }
@@ -82,7 +82,7 @@ public class CurrencyDatabase {
         List<Currency> result = new ArrayList<Currency>();
 
         for (Currency currency : currencies) {
-            if (currency.major) {
+            if (currency.isMajor()) {
                 result.add(currency);
             }
         }
@@ -155,7 +155,7 @@ public class CurrencyDatabase {
 
         writer.write("code,name,major\n");
         for (Currency currency : currencies) {
-            writer.write(currency.code + "," + currency.name + "," + (currency.major ? "yes" : "no"));
+            writer.write(currency.getCode() + "," + currency.getName() + "," + (currency.isMajor() ? "yes" : "no"));
             writer.newLine();
         }
 

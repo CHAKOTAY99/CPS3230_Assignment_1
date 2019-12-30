@@ -21,7 +21,7 @@ public class CurrencyManagerTest {
         List<String> currencyCodes = new ArrayList<>();
         List<Currency> initialDatabase = currencyManager.currencyDatabase.getCurrencies();
         for(Currency currency : initialDatabase){
-            currencyCodes.add(currency.code);
+            currencyCodes.add(currency.getCode());
         }
         for(String currencyCode : currencyCodes){
             currencyManager.currencyDatabase.deleteCurrency(currencyCode);
@@ -119,9 +119,9 @@ public class CurrencyManagerTest {
         currencyManager.addCurrency("EGP", "Egyptian Pound", false);
         // Verify
         Currency result = currencyManager.currencyDatabase.getCurrencyByCode("EGP");
-        assertEquals("EGP", result.code);
-        assertEquals("Egyptian Pound", result.name);
-        assertEquals(false, result.major);
+        assertEquals("EGP", result.getCode());
+        assertEquals("Egyptian Pound", result.getName());
+        assertEquals(false, result.isMajor());
     }
 
     @Test

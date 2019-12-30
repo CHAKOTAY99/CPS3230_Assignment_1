@@ -21,11 +21,11 @@ public class CurrencyTest {
         String name = "Egyptian Pound";
         Boolean major = false;
         // Exercise
-        currency = new Currency(code, name, major);
+        currency = Currency.createCurrency(code, name, major);
         // Verify
-        assertEquals(currency.code, code);
-        assertEquals(currency.name, name);
-        assertEquals(currency.major, major);
+        assertEquals(currency.getCode(), code);
+        assertEquals(currency.getName(), name);
+        assertEquals(currency.isMajor(), major);
     }
 
     @Test
@@ -38,9 +38,9 @@ public class CurrencyTest {
         // Exercise
         Currency currency = Currency.fromString(currencyString);
         // Verify
-        assertEquals(currency.code, code);
-        assertEquals(currency.major, major);
-        assertEquals(currency.name, name);
+        assertEquals(currency.getCode(), code);
+        assertEquals(currency.isMajor(), major);
+        assertEquals(currency.getName(), name);
     }
 
     @Test
@@ -53,15 +53,15 @@ public class CurrencyTest {
         // Exercise
         Currency testCurrency = Currency.fromString(currencyString);
         // Verify
-        assertEquals(testCurrency.code, code);
-        assertEquals(testCurrency.major, major);
-        assertEquals(testCurrency.name, name);
+        assertEquals(testCurrency.getCode(), code);
+        assertEquals(testCurrency.isMajor(), major);
+        assertEquals(testCurrency.getName(), name);
     }
 
     @Test
     public void testToString_ReturnValid() {
         // Setup
-        currency = new Currency("EGP", "Egyptian Pound", false);
+        currency = Currency.createCurrency("EGP", "Egyptian Pound", false);
         // Exercise
         String testString = currency.toString();
         // Verify

@@ -19,7 +19,7 @@ public class CurrencyDatabaseTest {
         List<String> currencyCodes = new ArrayList<>();
         List<Currency> initialDatabase = currencyDatabase.getCurrencies();
         for(Currency currency : initialDatabase){
-            currencyCodes.add(currency.code);
+            currencyCodes.add(currency.getCode());
         }
         for(String currencyCode : currencyCodes){
             currencyDatabase.deleteCurrency(currencyCode);
@@ -28,11 +28,11 @@ public class CurrencyDatabaseTest {
 
     @After
     public void teardown() throws Exception{
-        currencyDatabase.addCurrency(new Currency("AUD", "Australian Dollar", false));
-        currencyDatabase.addCurrency(new Currency("EUR", "Euro", true));
-        currencyDatabase.addCurrency(new Currency("GBP", "British Pound", true));
-        currencyDatabase.addCurrency(new Currency("TRY", "Turkish Lira", false));
-        currencyDatabase.addCurrency(new Currency("USD", "US Dollar", true));
+        currencyDatabase.addCurrency(Currency.createCurrency("AUD", "Australian Dollar", false));
+        currencyDatabase.addCurrency(Currency.createCurrency("EUR", "Euro", true));
+        currencyDatabase.addCurrency(Currency.createCurrency("GBP", "British Pound", true));
+        currencyDatabase.addCurrency(Currency.createCurrency("TRY", "Turkish Lira", false));
+        currencyDatabase.addCurrency(Currency.createCurrency("USD", "US Dollar", true));
         currencyDatabase = null;
     }
 
@@ -47,11 +47,11 @@ public class CurrencyDatabaseTest {
     @Test
     public void testCurrencyByCode_Default() throws Exception {
         // Setup
-        currencyDatabase.addCurrency(new Currency("RMB", "Renminbi", true));
+        currencyDatabase.addCurrency(Currency.createCurrency("RMB", "Renminbi", true));
         // Exercise
         Currency currency = currencyDatabase.getCurrencyByCode("RMB");
         // Verify
-        assertEquals("RMB", currency.code);
+        assertEquals("RMB", currency.getCode());
         // Teardown
         currencyDatabase.deleteCurrency("RMB");
     }
@@ -67,7 +67,7 @@ public class CurrencyDatabaseTest {
     @Test
     public void testCurrencyExists_ReturnTrue() throws Exception {
         // Setup
-        currencyDatabase.addCurrency(new Currency("RMB", "Renminbi", true));
+        currencyDatabase.addCurrency(Currency.createCurrency("RMB", "Renminbi", true));
         // Exercise
         boolean check = currencyDatabase.currencyExists("RMB");
         // Verify
@@ -79,7 +79,7 @@ public class CurrencyDatabaseTest {
     @Test
     public void testGetCurrencies_ReturnPopulatedList() throws Exception {
         // Setup
-        currencyDatabase.addCurrency(new Currency("RMB", "Renminbi", true));
+        currencyDatabase.addCurrency(Currency.createCurrency("RMB", "Renminbi", true));
         // Exercise
         List<Currency> testList = currencyDatabase.getCurrencies();
         // Verify
@@ -99,7 +99,7 @@ public class CurrencyDatabaseTest {
     @Test
     public void testGetMajorCurrencies_ReturnPopulatedList() throws Exception {
         // Setup
-        currencyDatabase.addCurrency(new Currency("RMB", "Renminbi", true));
+        currencyDatabase.addCurrency(Currency.createCurrency("RMB", "Renminbi", true));
         // Exercise
         List<Currency> testList = currencyDatabase.getMajorCurrencies();
         // Verify
@@ -111,7 +111,7 @@ public class CurrencyDatabaseTest {
     @Test
     public void testGetMajorCurrencies_ReturnEmptyDefaultList() throws Exception {
         // Setup - added non major currency
-        currencyDatabase.addCurrency(new Currency("EGP", "Egyptian Pound", false));
+        currencyDatabase.addCurrency(Currency.createCurrency("EGP", "Egyptian Pound", false));
         // Exercise
         List<Currency> testList = currencyDatabase.getMajorCurrencies();
         // Verify
@@ -123,7 +123,7 @@ public class CurrencyDatabaseTest {
     @Test
     public void testGetExchangeRate_ExceptionUnknownSource() throws Exception {
         // Setup - added non major currency
-        currencyDatabase.addCurrency(new Currency("EGP", "Egyptian Pound", false));
+        currencyDatabase.addCurrency(Currency.createCurrency("EGP", "Egyptian Pound", false));
         // Exercise
         try {
             currencyDatabase.getExchangeRate("RMB", "EGP");
@@ -137,7 +137,7 @@ public class CurrencyDatabaseTest {
     @Test
     public void testGetExchangeRate_ExceptionUnknownDestination() throws Exception {
         // Setup - added non major currency
-        currencyDatabase.addCurrency(new Currency("EGP", "Egyptian Pound", false));
+        currencyDatabase.addCurrency(Currency.createCurrency("EGP", "Egyptian Pound", false));
         // Exercise
         try {
             currencyDatabase.getExchangeRate("EGP", "RMB");
@@ -151,8 +151,8 @@ public class CurrencyDatabaseTest {
     @Test
     public void testGetExchangeRate_ReturnRate() throws Exception {
         // Setup
-        Currency currency1 = new Currency("EGP", "Egyptian Pound", false);
-        Currency currency2 = new Currency("RMB", "Renminbi", true);
+        Currency currency1 = Currency.createCurrency("EGP", "Egyptian Pound", false);
+        Currency currency2 = Currency.createCurrency("RMB", "Renminbi", true);
         currencyDatabase.addCurrency(currency1);
         currencyDatabase.addCurrency(currency2);
         ExchangeRate exchangeRate = new ExchangeRate(currency1, currency2, 0.52);
@@ -169,8 +169,8 @@ public class CurrencyDatabaseTest {
     @Test
     public void testGetExchangeRate_TimeExceeded() throws Exception {
         // Setup
-        Currency currency1 = new Currency("EGP", "Egyptian Pound", false);
-        Currency currency2 = new Currency("RMB", "Renminbi", true);
+        Currency currency1 = Currency.createCurrency("EGP", "Egyptian Pound", false);
+        Currency currency2 = Currency.createCurrency("RMB", "Renminbi", true);
         currencyDatabase.addCurrency(currency1);
         currencyDatabase.addCurrency(currency2);
         ExchangeRate result = currencyDatabase.getExchangeRate("EGP", "RMB");
@@ -187,8 +187,8 @@ public class CurrencyDatabaseTest {
     @Test
     public void testAddCurrency() throws Exception {
         // Exercise
-        currencyDatabase.addCurrency(new Currency("EGP", "Egyptian Pound", false));
-        currencyDatabase.addCurrency(new Currency("RMB", "Renminbi", true));
+        currencyDatabase.addCurrency(Currency.createCurrency("EGP", "Egyptian Pound", false));
+        currencyDatabase.addCurrency(Currency.createCurrency("RMB", "Renminbi", true));
         // Verify
         List<Currency> testList = currencyDatabase.getCurrencies();
         assertEquals(2, testList.size());
@@ -200,8 +200,8 @@ public class CurrencyDatabaseTest {
     @Test
     public void testDeleteCurrency() throws Exception {
         // Setup
-        currencyDatabase.addCurrency(new Currency("EGP", "Egyptian Pound", false));
-        currencyDatabase.addCurrency(new Currency("RMB", "Renminbi", true));
+        currencyDatabase.addCurrency(Currency.createCurrency("EGP", "Egyptian Pound", false));
+        currencyDatabase.addCurrency(Currency.createCurrency("RMB", "Renminbi", true));
 
         List<Currency> testListStart = currencyDatabase.getCurrencies();
         // Exercise

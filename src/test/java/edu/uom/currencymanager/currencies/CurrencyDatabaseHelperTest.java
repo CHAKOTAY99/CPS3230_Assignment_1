@@ -101,7 +101,7 @@ public class CurrencyDatabaseHelperTest {
         currencyDatabase.init();
         // Verify
         Currency currency = currencyDatabase.getCurrencyByCode("EGP");
-        assertEquals("EGP", currency.code);
+        assertEquals("EGP", currency.getCode());
 
         // TearDown
         BufferedWriter teardownWriter = new BufferedWriter(new FileWriter(currenciesFile));

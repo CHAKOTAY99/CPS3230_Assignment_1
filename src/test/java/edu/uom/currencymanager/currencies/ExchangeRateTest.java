@@ -9,8 +9,8 @@ public class ExchangeRateTest {
     @Test
     public void constructorTest(){
         // Setup
-        Currency sourceCurrency = new Currency("EGP", "Egyptian Pound", false);
-        Currency destinationCurrency = new Currency("RMB", "Rembini", true);
+        Currency sourceCurrency = Currency.createCurrency("EGP", "Egyptian Pound", false);
+        Currency destinationCurrency = Currency.createCurrency("RMB", "Rembini", true);
         double rate = 1.0;
         long timeLastChecked = System.currentTimeMillis();
         // Exercise
@@ -26,8 +26,8 @@ public class ExchangeRateTest {
     @Test
     public void testToString_returnValid(){
         // Setup
-        Currency sourceCurrency = new Currency("EGP", "Egyptian Pound", false);
-        Currency destinationCurrency = new Currency("RMB", "Rembini", true);
+        Currency sourceCurrency = Currency.createCurrency("EGP", "Egyptian Pound", false);
+        Currency destinationCurrency = Currency.createCurrency("RMB", "Rembini", true);
         double rate = 1;
         // Exercise
         ExchangeRate exchangeRate = new ExchangeRate(sourceCurrency, destinationCurrency, rate);
