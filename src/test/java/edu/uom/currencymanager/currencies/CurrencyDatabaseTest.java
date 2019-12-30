@@ -155,12 +155,12 @@ public class CurrencyDatabaseTest {
         Currency currency2 = Currency.createCurrency("RMB", "Renminbi", true);
         currencyDatabase.addCurrency(currency1);
         currencyDatabase.addCurrency(currency2);
-        ExchangeRate exchangeRate = new ExchangeRate(currency1, currency2, 0.52);
+        ExchangeRate exchangeRate = ExchangeRate.createExchangeRate(currency1, currency2, 0.52);
         // Exercise
         ExchangeRate result = currencyDatabase.getExchangeRate("EGP", "RMB");
-        result.rate = 0.52;
+        result.setRate(0.52);
         // Verify
-        assertEquals("EGP 1 = RMB " + exchangeRate.rate + "", result.toString());
+        assertEquals("EGP 1 = RMB " + exchangeRate.getRate() + "", result.toString());
         // Teardown
         currencyDatabase.deleteCurrency("EGP");
         currencyDatabase.deleteCurrency("RMB");
@@ -174,11 +174,11 @@ public class CurrencyDatabaseTest {
         currencyDatabase.addCurrency(currency1);
         currencyDatabase.addCurrency(currency2);
         ExchangeRate result = currencyDatabase.getExchangeRate("EGP", "RMB");
-        result.timeLastChecked = result.timeLastChecked - 600000;
+        result.setTimeLastChecked(result.getTimeLastChecked() - 600000);
         // Exercise
         ExchangeRate result2 = currencyDatabase.getExchangeRate("EGP", "RMB");
         // Verify
-        assertTrue(result.rate != result2.rate);
+        assertTrue(result.getRate() != result2.getRate());
         // TearDown
         currencyDatabase.deleteCurrency("EGP");
         currencyDatabase.deleteCurrency("RMB");

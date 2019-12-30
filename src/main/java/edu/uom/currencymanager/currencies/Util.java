@@ -1,6 +1,5 @@
 package edu.uom.currencymanager.currencies;
 
-import javax.swing.text.NumberFormatter;
 import java.text.DecimalFormat;
 
 public class Util {
