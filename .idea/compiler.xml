@@ -11,7 +11,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="11">
-      <module name="currencymanager" target="11" />
+      <module name="currencymanager" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>
