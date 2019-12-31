@@ -14,6 +14,7 @@ public class RWClass {
     private String currenciesFile = "target" + File.separator + "classes" + File.separator + "currencies.txt";
     private CurrencyDatabase currencyDatabase;
     private CurrencyServer currencyServer;
+
     public RWClass() throws Exception {
     }
 
