@@ -14,6 +14,7 @@ public class CurrencyManager {
 
     public CurrencyManager() throws Exception {
         currencyDatabase = new CurrencyDatabase();
+        currencyDatabase.retreiveData();
     }
 
 
@@ -126,6 +127,8 @@ public class CurrencyManager {
 
     public void addCurrency(String code, String name, boolean major) throws Exception {
 
+        List<Currency> currencies = currencyDatabase.getCurrencies();
+
         //Check format of code
         if (code.length() != 3) {
             throw new Exception("A currency code should have 3 characters.");
@@ -137,7 +140,7 @@ public class CurrencyManager {
         }
 
         //Check if currency already exists
-        if (currencyDatabase.currencyExists(code)) {
+        if (currencyDatabase.currencyExists(code, currencies)) {
             throw new Exception("The currency " + code + " already exists.");
         }
 
@@ -148,7 +151,9 @@ public class CurrencyManager {
 
     public void deleteCurrencyWithCode(String code) throws Exception {
 
-        if (!currencyDatabase.currencyExists(code)) {
+        List<Currency> currencies = currencyDatabase.getCurrencies();
+
+        if (!currencyDatabase.currencyExists(code, currencies)) {
             throw new Exception("Currency does not exist: " + code);
         }
 

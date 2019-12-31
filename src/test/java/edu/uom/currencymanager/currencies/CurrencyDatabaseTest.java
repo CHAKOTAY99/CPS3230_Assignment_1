@@ -39,7 +39,8 @@ public class CurrencyDatabaseTest {
     @Test
     public void testCurrencyByCode_NotExist() {
         // Exercise
-        Currency currency = currencyDatabase.getCurrencyByCode(null);
+        List<Currency> currencies = currencyDatabase.getCurrencies();
+        Currency currency = currencyDatabase.getCurrencyByCode(null, currencies);
         // Verify
         assertEquals(null, currency);
     }
@@ -49,7 +50,8 @@ public class CurrencyDatabaseTest {
         // Setup
         currencyDatabase.addCurrency(Currency.createCurrency("RMB", "Renminbi", true));
         // Exercise
-        Currency currency = currencyDatabase.getCurrencyByCode("RMB");
+        List<Currency> currencies = currencyDatabase.getCurrencies();
+        Currency currency = currencyDatabase.getCurrencyByCode("RMB", currencies);
         // Verify
         assertEquals("RMB", currency.getCode());
         // Teardown
@@ -59,7 +61,8 @@ public class CurrencyDatabaseTest {
     @Test
     public void testCurrencyExists_ReturnFalse() {
         // Exercise
-        boolean check = currencyDatabase.currencyExists("RMB");
+        List<Currency> currencies = currencyDatabase.getCurrencies();
+        boolean check = currencyDatabase.currencyExists("RMB", currencies);
         // Verify
         assertEquals(false, check);
     }
@@ -69,7 +72,8 @@ public class CurrencyDatabaseTest {
         // Setup
         currencyDatabase.addCurrency(Currency.createCurrency("RMB", "Renminbi", true));
         // Exercise
-        boolean check = currencyDatabase.currencyExists("RMB");
+        List<Currency> currencies = currencyDatabase.getCurrencies();
+        boolean check = currencyDatabase.currencyExists("RMB", currencies);
         // Verify
         assertEquals(check, true);
         // Teardown

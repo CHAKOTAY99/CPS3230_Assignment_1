@@ -56,8 +56,9 @@ public class CurrencyManagerTest {
         // Setup
         currencyManager.addCurrency("EGP", "Egyptian Pound", false);
         currencyManager.addCurrency("RMB", "Renminbi", true);
-        Currency currency1 = currencyManager.currencyDatabase.getCurrencyByCode("EGP");
-        Currency currency2 = currencyManager.currencyDatabase.getCurrencyByCode("RMB");
+        List<Currency> currencies = currencyManager.currencyDatabase.getCurrencies();
+        Currency currency1 = currencyManager.currencyDatabase.getCurrencyByCode("EGP", currencies);
+        Currency currency2 = currencyManager.currencyDatabase.getCurrencyByCode("RMB", currencies);
         // Exercise
         ExchangeRate result = currencyManager.getExchangeRate("EGP", "RMB");
         // Verify
@@ -118,7 +119,8 @@ public class CurrencyManagerTest {
         // Excrcise
         currencyManager.addCurrency("EGP", "Egyptian Pound", false);
         // Verify
-        Currency result = currencyManager.currencyDatabase.getCurrencyByCode("EGP");
+        List<Currency> currencies = currencyManager.currencyDatabase.getCurrencies();
+        Currency result = currencyManager.currencyDatabase.getCurrencyByCode("EGP", currencies);
         assertEquals("EGP", result.getCode());
         assertEquals("Egyptian Pound", result.getName());
         assertEquals(false, result.isMajor());

@@ -5,6 +5,7 @@ import org.junit.Test;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
+import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
@@ -23,7 +24,7 @@ public class CurrencyDatabaseHelperTest {
         writer.close();
         try {
             currencyDatabase = new CurrencyDatabase();
-            currencyDatabase.init();
+//            currencyDatabase.init();
         } catch (Exception exp) {
             assertEquals("Parsing error when reading currencies file.", exp.getMessage());
         }
@@ -48,7 +49,7 @@ public class CurrencyDatabaseHelperTest {
         writer.close();
         try {
             currencyDatabase = new CurrencyDatabase();
-            currencyDatabase.init();
+//            currencyDatabase.init();
         } catch (Exception exp) {
             assertEquals("Parsing error: expected two commas in line  EGP,Egyptian Pound,,no", exp.getMessage());
         }
@@ -73,7 +74,7 @@ public class CurrencyDatabaseHelperTest {
         writer.close();
         try {
             currencyDatabase = new CurrencyDatabase();
-            currencyDatabase.init();
+//            currencyDatabase.init();
         } catch (Exception exp) {
             assertEquals("Invalid currency code detected:  EGP,Egyptian Pound,,no", exp.getMessage());
         }
@@ -98,9 +99,11 @@ public class CurrencyDatabaseHelperTest {
         writer.close();
 
         currencyDatabase = new CurrencyDatabase();
-        currencyDatabase.init();
+//        currencyDatabase.init();
+        List<Currency> currencies = currencyDatabase.getCurrencies();
+
         // Verify
-        Currency currency = currencyDatabase.getCurrencyByCode("EGP");
+        Currency currency = currencyDatabase.getCurrencyByCode("EGP", currencies);
         assertEquals("EGP", currency.getCode());
 
         // TearDown
