@@ -6,11 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="currencymanager" />
         <module name="CPS3230_Assignment_1" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="11">
-      <module name="CPS3230_Assignment_1" target="11" />
+      <module name="currencymanager" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>

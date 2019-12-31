@@ -5,9 +5,9 @@ import edu.uom.currencymanager.currencies.CurrencyDatabase;
 import edu.uom.currencymanager.currencies.ExchangeRate;
 
 import java.util.ArrayList;
-import java.util.Currency;
 import java.util.List;
 import java.util.Scanner;
+
 
 public class CurrencyManager {
 
@@ -146,7 +146,7 @@ public class CurrencyManager {
         }
 
         //Add currency to database
-        currencyDatabase.addCurrency(Currency.createCurrency(code,name,major));
+        currencyDatabase.addCurrency(Currency.createCurrency(code, name, major));
 
     }
 
