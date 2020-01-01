@@ -6,7 +6,7 @@ import edu.uom.currencymanager.currencyserver.CurrencyServer;
 import java.util.HashMap;
 import java.util.List;
 
-public class ExchangeRate {
+public class ExchangeRate implements IExchangeRate{
 
     private Currency sourceCurrency;
     private Currency destinationCurrency;
@@ -24,46 +24,56 @@ public class ExchangeRate {
         timeLastChecked = System.currentTimeMillis();
     }
 
-    public static ExchangeRate createExchangeRate(Currency sourceCurrency, Currency destinationCurrency, double rate) {
+    private static ExchangeRate createExchangeRate(Currency sourceCurrency, Currency destinationCurrency, double rate) {
         return new ExchangeRate(sourceCurrency, destinationCurrency, rate);
     }
 
+    @Override
     public Currency getSourceCurrency() {
         return sourceCurrency;
     }
 
+    @Override
     public void setSourceCurrency(Currency sourceCurrency) {
         this.sourceCurrency = sourceCurrency;
     }
 
+    @Override
     public Currency getDestinationCurrency() {
         return destinationCurrency;
     }
 
+    @Override
     public void setDestinationCurrency(Currency destinationCurrency) {
         this.destinationCurrency = destinationCurrency;
     }
 
+    @Override
     public double getRate() {
         return rate;
     }
 
+    @Override
     public void setRate(double rate) {
         this.rate = rate;
     }
 
+    @Override
     public long getTimeLastChecked() {
         return timeLastChecked;
     }
 
+    @Override
     public void setTimeLastChecked(long timeLastChecked) {
         this.timeLastChecked = timeLastChecked;
     }
 
+    @Override
     public String toString() {
         return sourceCurrency.getCode() + " 1 = " + destinationCurrency.getCode() + " " + Util.formatAmount(rate);
     }
 
+    @Override
     public ExchangeRate getExchangeRate(String sourceCurrencyCode, String destinationCurrencyCode, List<Currency> currencies) throws  Exception {
         long FIVE_MINUTES_IN_MILLIS = 300000;  //5*60*100
         HashMap<String, ExchangeRate> exchangeRates = new HashMap<String, ExchangeRate>();

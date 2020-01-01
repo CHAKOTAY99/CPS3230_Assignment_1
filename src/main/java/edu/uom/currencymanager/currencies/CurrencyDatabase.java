@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class CurrencyDatabase {
+public class CurrencyDatabase implements ICurrencyDatabase{
     public RWClass rwClass;
     public CurrencyServer currencyServer;
     public List<Currency> currencies = new ArrayList<Currency>();
@@ -20,11 +20,13 @@ public class CurrencyDatabase {
 
     }
 
+    @Override
     public void retreiveData() throws Exception {
         rwClass = new RWClass();
         currencies = rwClass.readExistingFile();
     }
 
+    @Override
     public Currency getCurrencyByCode(String code, List<Currency> currencies) {
 
         for (Currency currency : currencies) {
@@ -36,14 +38,17 @@ public class CurrencyDatabase {
         return null;
     }
 
+    @Override
     public boolean currencyExists(String code, List<Currency> currencies) {
         return getCurrencyByCode(code, currencies) != null;
     }
 
+    @Override
     public List<Currency> getCurrencies() {
         return currencies;
     }
 
+    @Override
     public List<Currency> getMajorCurrencies() {
         List<Currency> result = new ArrayList<Currency>();
 
@@ -96,6 +101,7 @@ public class CurrencyDatabase {
 //    }
 
 
+    @Override
     public void addCurrency(Currency currency) throws Exception {
 
         //Save to list
@@ -105,6 +111,7 @@ public class CurrencyDatabase {
         rwClass.writeToFile(currencies);
     }
 
+    @Override
     public void deleteCurrency(String code) throws Exception {
 
         //Save to list
@@ -113,5 +120,4 @@ public class CurrencyDatabase {
         // Write to flie
         rwClass.writeToFile(currencies);
     }
-
 }

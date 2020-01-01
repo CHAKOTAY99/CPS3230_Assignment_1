@@ -8,7 +8,7 @@ public class Currency implements  ICurrency{
     private String name;
     private boolean major;
 
-    Currency(String code, String name, boolean major) {
+    private Currency(String code, String name, boolean major) {
         this.code = code;
         this.name = name;
         this.major = major;
@@ -18,26 +18,33 @@ public class Currency implements  ICurrency{
         return new Currency(code, name, major);
     }
 
+
+    @Override
     public String getCode() {
         return code;
     }
 
+    @Override
     public void setCode(String code) {
         this.code = code;
     }
 
+    @Override
     public String getName() {
         return name;
     }
 
+    @Override
     public void setName(String name) {
         this.name = name;
     }
 
+    @Override
     public boolean isMajor() {
         return major;
     }
 
+    @Override
     public void setMajor(boolean major) {
         this.major = major;
     }
@@ -53,6 +60,7 @@ public class Currency implements  ICurrency{
         return createCurrency(code,name,major);
     }
 
+    @Override
     public String toString() {
         return code + " - " + name;
     }
