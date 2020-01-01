@@ -60,7 +60,7 @@ public class CurrencyManagerTest {
         Currency currency1 = currencyManager.currencyDatabase.getCurrencyByCode("EGP", currencies);
         Currency currency2 = currencyManager.currencyDatabase.getCurrencyByCode("RMB", currencies);
         // Exercise
-        ExchangeRate result = currencyManager.getExchangeRate("EGP", "RMB");
+        ExchangeRate result = currencyManager.getExchangeRate("EGP", "RMB", currencies);
         // Verify
         assertEquals(currency1, result.getSourceCurrency());
         assertEquals(currency2, result.getDestinationCurrency());

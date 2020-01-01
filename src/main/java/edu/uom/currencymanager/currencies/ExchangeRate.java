@@ -12,10 +12,10 @@ public class ExchangeRate {
     private Currency destinationCurrency;
     private double rate;
     private long timeLastChecked;
-    CurrencyDatabase currencyDatabase;
-    RWClass rwClass;
-    HashMap<String, ExchangeRate> exchangeRates = new HashMap<String, ExchangeRate>();
 
+    public ExchangeRate() throws Exception{
+
+    }
 
     private ExchangeRate(Currency sourceCurrency, Currency destinationCurrency, double rate) {
         this.sourceCurrency = sourceCurrency;
@@ -66,6 +66,9 @@ public class ExchangeRate {
 
     public ExchangeRate getExchangeRate(String sourceCurrencyCode, String destinationCurrencyCode, List<Currency> currencies) throws  Exception {
         long FIVE_MINUTES_IN_MILLIS = 300000;  //5*60*100
+        HashMap<String, ExchangeRate> exchangeRates = new HashMap<String, ExchangeRate>();
+        CurrencyDatabase currencyDatabase = new CurrencyDatabase();
+        RWClass rwClass = new RWClass();
         CurrencyServer currencyServer = rwClass.getCurrencyServer();
 
         ExchangeRate result = null;
@@ -103,5 +106,4 @@ public class ExchangeRate {
 
         return result;
     }
-
 }

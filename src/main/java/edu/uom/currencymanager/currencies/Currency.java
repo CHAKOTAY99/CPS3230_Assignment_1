@@ -2,19 +2,19 @@ package edu.uom.currencymanager.currencies;
 
 import java.util.StringTokenizer;
 
-public class Currency {
+public class Currency implements  ICurrency{
 
     private String code;
     private String name;
     private boolean major;
 
-    private Currency(String code, String name, boolean major) {
+    Currency(String code, String name, boolean major) {
         this.code = code;
         this.name = name;
         this.major = major;
     }
 
-    public static Currency createCurrency(String code, String name, boolean major) {
+    private static Currency createCurrency(String code, String name, boolean major) {
         return new Currency(code, name, major);
     }
 

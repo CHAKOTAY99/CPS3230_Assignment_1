@@ -12,10 +12,12 @@ import java.util.Scanner;
 public class CurrencyManager {
 
     CurrencyDatabase currencyDatabase;
+    ExchangeRate exchangeRate;
 
     public CurrencyManager() throws Exception {
         currencyDatabase = new CurrencyDatabase();
         currencyDatabase.retreiveData();
+        exchangeRate = new ExchangeRate();
     }
 
 
@@ -60,12 +62,13 @@ public class CurrencyManager {
                     }
                     break;
                 case 3:
+                    currencies = manager.currencyDatabase.getCurrencies();
                     System.out.print("\nEnter source currency code (e.g. EUR): ");
                     String src = sc.next().toUpperCase();
                     System.out.print("\nEnter destination currency code (e.g. GBP): ");
                     String dst = sc.next().toUpperCase();
                     try {
-                        ExchangeRate rate = manager.getExchangeRate(src, dst);
+                        ExchangeRate rate = manager.getExchangeRate(src, dst, currencies);
                         System.out.println(rate.toString());
                     } catch (Exception e) {
                         System.out.println(e.getMessage());
@@ -115,15 +118,17 @@ public class CurrencyManager {
         for (Currency src : currencies) {
             for (Currency dst : currencies) {
                 if (src != dst) {
-                    exchangeRates.add(currencyDatabase.getExchangeRate(src.getCode(), dst.getCode()));
+                    ExchangeRate toChange = exchangeRate.getExchangeRate(src.getCode(), dst.getCode(), currencies);
+                    exchangeRates.add(toChange);
+//                    exchangeRates.add(currencyDatabase.getExchangeRate(src.getCode(), dst.getCode()));
                 }
             }
         }
         return exchangeRates;
     }
 
-    public ExchangeRate getExchangeRate(String sourceCurrency, String destinationCurrency) throws Exception {
-        return currencyDatabase.getExchangeRate(sourceCurrency, destinationCurrency);
+    public ExchangeRate getExchangeRate(String sourceCurrency, String destinationCurrency, List<Currency> currencies) throws Exception {
+        return exchangeRate.getExchangeRate(sourceCurrency, destinationCurrency, currencies);
     }
 
     public void addCurrency(String code, String name, boolean major) throws Exception {

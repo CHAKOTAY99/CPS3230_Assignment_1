@@ -15,12 +15,9 @@ public class CurrencyDatabase {
     public List<Currency> currencies = new ArrayList<Currency>();
     HashMap<String, ExchangeRate> exchangeRates = new HashMap<String, ExchangeRate>();
 
-//    String currenciesFile = "target" + File.separator + "classes" + File.separator + "currencies.txt";
 
     public CurrencyDatabase() throws Exception {
-//        init();
-//        rwClass = new RWClass();
-//        List<Currency> newCurrency = rwClass.readExistingFile();
+
     }
 
     public void retreiveData() throws Exception {
@@ -59,44 +56,44 @@ public class CurrencyDatabase {
         return result;
     }
 
-    public ExchangeRate getExchangeRate(String sourceCurrencyCode, String destinationCurrencyCode) throws  Exception {
-        long FIVE_MINUTES_IN_MILLIS = 300000;  //5*60*100
-
-        ExchangeRate result = null;
-
-        Currency sourceCurrency = getCurrencyByCode(sourceCurrencyCode, currencies);
-        if (sourceCurrency == null) {
-            throw new Exception("Unkown currency: " + sourceCurrencyCode);
-        }
-
-        Currency destinationCurrency = getCurrencyByCode(destinationCurrencyCode, currencies);
-        if (destinationCurrency == null) {
-            throw new Exception("Unkown currency: " + destinationCurrencyCode);
-        }
-
-        //Check if exchange rate exists in database
-        String key = sourceCurrencyCode + destinationCurrencyCode;
-        if (exchangeRates.containsKey(key)) {
-            result = exchangeRates.get(key);
-            if (System.currentTimeMillis() - result.getTimeLastChecked() > FIVE_MINUTES_IN_MILLIS) {
-                result = null;
-            }
-        }
-
-        if (result == null) {
-            double rate = currencyServer.getExchangeRate(sourceCurrencyCode, destinationCurrencyCode);
-            result = ExchangeRate.createExchangeRate(sourceCurrency,destinationCurrency, rate);
-
-            //Cache exchange rate
-            exchangeRates.put(key, result);
-
-            //Cache inverse exchange rate
-            String inverseKey = destinationCurrencyCode+sourceCurrencyCode;
-            exchangeRates.put(inverseKey, ExchangeRate.createExchangeRate(destinationCurrency, sourceCurrency, 1/rate));
-        }
-
-        return result;
-    }
+//    public ExchangeRate getExchangeRate(String sourceCurrencyCode, String destinationCurrencyCode) throws  Exception {
+//        long FIVE_MINUTES_IN_MILLIS = 300000;  //5*60*100
+//
+//        ExchangeRate result = null;
+//
+//        Currency sourceCurrency = getCurrencyByCode(sourceCurrencyCode, currencies);
+//        if (sourceCurrency == null) {
+//            throw new Exception("Unkown currency: " + sourceCurrencyCode);
+//        }
+//
+//        Currency destinationCurrency = getCurrencyByCode(destinationCurrencyCode, currencies);
+//        if (destinationCurrency == null) {
+//            throw new Exception("Unkown currency: " + destinationCurrencyCode);
+//        }
+//
+//        //Check if exchange rate exists in database
+//        String key = sourceCurrencyCode + destinationCurrencyCode;
+//        if (exchangeRates.containsKey(key)) {
+//            result = exchangeRates.get(key);
+//            if (System.currentTimeMillis() - result.getTimeLastChecked() > FIVE_MINUTES_IN_MILLIS) {
+//                result = null;
+//            }
+//        }
+//
+//        if (result == null) {
+//            double rate = currencyServer.getExchangeRate(sourceCurrencyCode, destinationCurrencyCode);
+//            result = ExchangeRate.createExchangeRate(sourceCurrency,destinationCurrency, rate);
+//
+//            //Cache exchange rate
+//            exchangeRates.put(key, result);
+//
+//            //Cache inverse exchange rate
+//            String inverseKey = destinationCurrencyCode+sourceCurrencyCode;
+//            exchangeRates.put(inverseKey, ExchangeRate.createExchangeRate(destinationCurrency, sourceCurrency, 1/rate));
+//        }
+//
+//        return result;
+//    }
 
 
     public void addCurrency(Currency currency) throws Exception {

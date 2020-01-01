@@ -11,6 +11,7 @@ import static org.junit.Assert.*;
 public class CurrencyDatabaseTest {
 
     CurrencyDatabase currencyDatabase;
+    ExchangeRate exchangeRate;
 
     @Before
     public void setup() throws Exception {
@@ -128,9 +129,10 @@ public class CurrencyDatabaseTest {
     public void testGetExchangeRate_ExceptionUnknownSource() throws Exception {
         // Setup - added non major currency
         currencyDatabase.addCurrency(Currency.createCurrency("EGP", "Egyptian Pound", false));
+        List<Currency> currencies = currencyDatabase.getCurrencies();
         // Exercise
         try {
-            currencyDatabase.getExchangeRate("RMB", "EGP");
+            exchangeRate.getExchangeRate("RMB", "EGP", currencies);
         } catch (Exception exception) {
             assertEquals("Unkown currency: RMB", exception.getMessage());
         }
@@ -142,9 +144,10 @@ public class CurrencyDatabaseTest {
     public void testGetExchangeRate_ExceptionUnknownDestination() throws Exception {
         // Setup - added non major currency
         currencyDatabase.addCurrency(Currency.createCurrency("EGP", "Egyptian Pound", false));
+        List<Currency> currencies = currencyDatabase.getCurrencies();
         // Exercise
         try {
-            currencyDatabase.getExchangeRate("EGP", "RMB");
+            exchangeRate.getExchangeRate("EGP", "RMB", currencies);
         } catch (Exception exception) {
             assertEquals("Unkown currency: RMB", exception.getMessage());
         }
@@ -160,8 +163,9 @@ public class CurrencyDatabaseTest {
         currencyDatabase.addCurrency(currency1);
         currencyDatabase.addCurrency(currency2);
         ExchangeRate exchangeRate = ExchangeRate.createExchangeRate(currency1, currency2, 0.52);
+        List<Currency> currencies = currencyDatabase.getCurrencies();
         // Exercise
-        ExchangeRate result = currencyDatabase.getExchangeRate("EGP", "RMB");
+        ExchangeRate result = exchangeRate.getExchangeRate("EGP", "RMB", currencies);
         result.setRate(0.52);
         // Verify
         assertEquals("EGP 1 = RMB " + exchangeRate.getRate() + "", result.toString());
@@ -177,10 +181,11 @@ public class CurrencyDatabaseTest {
         Currency currency2 = Currency.createCurrency("RMB", "Renminbi", true);
         currencyDatabase.addCurrency(currency1);
         currencyDatabase.addCurrency(currency2);
-        ExchangeRate result = currencyDatabase.getExchangeRate("EGP", "RMB");
+        List<Currency> currencies = currencyDatabase.getCurrencies();
+        ExchangeRate result = exchangeRate.getExchangeRate("EGP", "RMB", currencies);
         result.setTimeLastChecked(result.getTimeLastChecked() - 600000);
         // Exercise
-        ExchangeRate result2 = currencyDatabase.getExchangeRate("EGP", "RMB");
+        ExchangeRate result2 = exchangeRate.getExchangeRate("EGP", "RMB", currencies);
         // Verify
         assertTrue(result.getRate() != result2.getRate());
         // TearDown
