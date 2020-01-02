@@ -132,7 +132,7 @@ public class CurrencyDatabaseTest {
         List<Currency> currencies = currencyDatabase.getCurrencies();
         // Exercise
         try {
-            exchangeRate.getExchangeRate("RMB", "EGP", currencies);
+            currencyDatabase.getExchangeRate("RMB", "EGP");
         } catch (Exception exception) {
             assertEquals("Unkown currency: RMB", exception.getMessage());
         }
@@ -147,7 +147,7 @@ public class CurrencyDatabaseTest {
         List<Currency> currencies = currencyDatabase.getCurrencies();
         // Exercise
         try {
-            exchangeRate.getExchangeRate("EGP", "RMB", currencies);
+            currencyDatabase.getExchangeRate("EGP", "RMB");
         } catch (Exception exception) {
             assertEquals("Unkown currency: RMB", exception.getMessage());
         }
@@ -162,13 +162,12 @@ public class CurrencyDatabaseTest {
         Currency currency2 = Currency.createCurrency("RMB", "Renminbi", true);
         currencyDatabase.addCurrency(currency1);
         currencyDatabase.addCurrency(currency2);
-        ExchangeRate exchangeRate = ExchangeRate.createExchangeRate(currency1, currency2, 0.52);
-        List<Currency> currencies = currencyDatabase.getCurrencies();
+        ExchangeRate exchangeRate = new ExchangeRate(currency1, currency2, 0.52);
         // Exercise
-        ExchangeRate result = exchangeRate.getExchangeRate("EGP", "RMB", currencies);
-        result.setRate(0.52);
+        ExchangeRate result = currencyDatabase.getExchangeRate("EGP", "RMB");
+        result.rate = 0.52;
         // Verify
-        assertEquals("EGP 1 = RMB " + exchangeRate.getRate() + "", result.toString());
+        assertEquals("EGP 1 = RMB " + exchangeRate.rate + "", result.toString());
         // Teardown
         currencyDatabase.deleteCurrency("EGP");
         currencyDatabase.deleteCurrency("RMB");
@@ -182,12 +181,12 @@ public class CurrencyDatabaseTest {
         currencyDatabase.addCurrency(currency1);
         currencyDatabase.addCurrency(currency2);
         List<Currency> currencies = currencyDatabase.getCurrencies();
-        ExchangeRate result = exchangeRate.getExchangeRate("EGP", "RMB", currencies);
-        result.setTimeLastChecked(result.getTimeLastChecked() - 600000);
+        ExchangeRate result = currencyDatabase.getExchangeRate("EGP", "RMB");
+        result.timeLastChecked = result.timeLastChecked - 600000;
         // Exercise
-        ExchangeRate result2 = exchangeRate.getExchangeRate("EGP", "RMB", currencies);
+        ExchangeRate result2 = currencyDatabase.getExchangeRate("EGP", "RMB");
         // Verify
-        assertTrue(result.getRate() != result2.getRate());
+        assertTrue(result.rate != result2.rate);
         // TearDown
         currencyDatabase.deleteCurrency("EGP");
         currencyDatabase.deleteCurrency("RMB");

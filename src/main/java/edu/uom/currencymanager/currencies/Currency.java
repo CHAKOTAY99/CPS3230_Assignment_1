@@ -14,7 +14,7 @@ public class Currency implements  ICurrency{
         this.major = major;
     }
 
-    private static Currency createCurrency(String code, String name, boolean major) {
+    public static Currency createCurrency(String code, String name, boolean major) {
         return new Currency(code, name, major);
     }
 
