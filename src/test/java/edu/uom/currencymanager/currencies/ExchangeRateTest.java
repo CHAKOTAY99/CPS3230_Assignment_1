@@ -14,12 +14,12 @@ public class ExchangeRateTest {
         double rate = 1.0;
         long timeLastChecked = System.currentTimeMillis();
         // Exercise
-        ExchangeRate exchangeRate = new ExchangeRate(sourceCurrency, destinationCurrency, rate);
+        ExchangeRate exchangeRate = ExchangeRate.createExchangeRate(sourceCurrency, destinationCurrency, rate);
         // Verify
-        assertTrue(Math.abs(exchangeRate.rate-rate) <= 10);
-        assertTrue(Math.abs(exchangeRate.timeLastChecked-timeLastChecked) <= 10);
-        assertEquals(exchangeRate.sourceCurrency, sourceCurrency);
-        assertEquals(exchangeRate.destinationCurrency, destinationCurrency);
+        assertTrue(Math.abs(exchangeRate.getRate()-rate) <= 10);
+        assertTrue(Math.abs(exchangeRate.getTimeLastChecked()-timeLastChecked) <= 10);
+        assertEquals(exchangeRate.getSourceCurrency(), sourceCurrency);
+        assertEquals(exchangeRate.getDestinationCurrency(), destinationCurrency);
     }
 
 
@@ -30,7 +30,7 @@ public class ExchangeRateTest {
         Currency destinationCurrency = Currency.createCurrency("RMB", "Rembini", true);
         double rate = 1;
         // Exercise
-        ExchangeRate exchangeRate = new ExchangeRate(sourceCurrency, destinationCurrency, rate);
+        ExchangeRate exchangeRate = ExchangeRate.createExchangeRate(sourceCurrency, destinationCurrency, rate);
         String result = exchangeRate.toString();
         assertEquals("EGP 1 = RMB 1.00", result);
     }

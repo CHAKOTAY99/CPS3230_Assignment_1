@@ -61,44 +61,44 @@ public class CurrencyDatabase implements ICurrencyDatabase{
         return result;
     }
 
-    public ExchangeRate getExchangeRate(String sourceCurrencyCode, String destinationCurrencyCode) throws  Exception {
-        long FIVE_MINUTES_IN_MILLIS = 300000;  //5*60*100
-
-        ExchangeRate result = null;
-
-        Currency sourceCurrency = getCurrencyByCode(sourceCurrencyCode, currencies);
-        if (sourceCurrency == null) {
-            throw new Exception("Unkown currency: " + sourceCurrencyCode);
-        }
-
-        Currency destinationCurrency = getCurrencyByCode(destinationCurrencyCode, currencies);
-        if (destinationCurrency == null) {
-            throw new Exception("Unkown currency: " + destinationCurrencyCode);
-        }
-
-        //Check if exchange rate exists in database
-        String key = sourceCurrencyCode + destinationCurrencyCode;
-        if (exchangeRates.containsKey(key)) {
-            result = exchangeRates.get(key);
-            if (System.currentTimeMillis() - result.timeLastChecked > FIVE_MINUTES_IN_MILLIS) {
-                result = null;
-            }
-        }
-
-        if (result == null) {
-            double rate = currencyServer.getExchangeRate(sourceCurrencyCode, destinationCurrencyCode);
-            result = new ExchangeRate(sourceCurrency,destinationCurrency, rate);
-
-            //Cache exchange rate
-            exchangeRates.put(key, result);
-
-            //Cache inverse exchange rate
-            String inverseKey = destinationCurrencyCode+sourceCurrencyCode;
-            exchangeRates.put(inverseKey, new ExchangeRate(destinationCurrency, sourceCurrency, 1/rate));
-        }
-
-        return result;
-    }
+//    public ExchangeRate getExchangeRate(String sourceCurrencyCode, String destinationCurrencyCode) throws  Exception {
+//        long FIVE_MINUTES_IN_MILLIS = 300000;  //5*60*100
+//
+//        ExchangeRate result = null;
+//
+//        Currency sourceCurrency = getCurrencyByCode(sourceCurrencyCode, currencies);
+//        if (sourceCurrency == null) {
+//            throw new Exception("Unkown currency: " + sourceCurrencyCode);
+//        }
+//
+//        Currency destinationCurrency = getCurrencyByCode(destinationCurrencyCode, currencies);
+//        if (destinationCurrency == null) {
+//            throw new Exception("Unkown currency: " + destinationCurrencyCode);
+//        }
+//
+//        //Check if exchange rate exists in database
+//        String key = sourceCurrencyCode + destinationCurrencyCode;
+//        if (exchangeRates.containsKey(key)) {
+//            result = exchangeRates.get(key);
+//            if (System.currentTimeMillis() - result.getTimeLastChecked() > FIVE_MINUTES_IN_MILLIS) {
+//                result = null;
+//            }
+//        }
+//
+//        if (result == null) {
+//            double rate = currencyServer.getExchangeRate(sourceCurrencyCode, destinationCurrencyCode);
+//            result = ExchangeRate.createExchangeRate(sourceCurrency,destinationCurrency, rate);
+//
+//            //Cache exchange rate
+//            exchangeRates.put(key, result);
+//
+//            //Cache inverse exchange rate
+//            String inverseKey = destinationCurrencyCode+sourceCurrencyCode;
+//            exchangeRates.put(inverseKey, ExchangeRate.createExchangeRate(destinationCurrency, sourceCurrency, 1/rate));
+//        }
+//
+//        return result;
+//    }
 
 
     @Override

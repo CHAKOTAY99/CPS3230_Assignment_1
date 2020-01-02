@@ -17,7 +17,7 @@ public class CurrencyManager {
     public CurrencyManager() throws Exception {
         currencyDatabase = new CurrencyDatabase();
         currencyDatabase.retreiveData();
-//        exchangeRate.getInstance();
+        exchangeRate = new ExchangeRate();
     }
 
 
@@ -118,10 +118,9 @@ public class CurrencyManager {
         for (Currency src : currencies) {
             for (Currency dst : currencies) {
                 if (src != dst) {
-//                    ExchangeRate exchangeRate = ExchangeRate.getInstance();
-//                    ExchangeRate toChange = exchangeRate.getExchangeRate(src.getCode(), dst.getCode(), currencies);
-//                    exchangeRates.add(toChange);
-                    exchangeRates.add(currencyDatabase.getExchangeRate(src.getCode(), dst.getCode()));
+                    ExchangeRate toChange = exchangeRate.getExchangeRate(src.getCode(), dst.getCode(), currencies);
+                    exchangeRates.add(toChange);
+//                    exchangeRates.add(currencyDatabase.getExchangeRate(src.getCode(), dst.getCode()));
                 }
             }
         }
@@ -129,7 +128,7 @@ public class CurrencyManager {
     }
 
     public ExchangeRate getExchangeRate(String sourceCurrency, String destinationCurrency, List<Currency> currencies) throws Exception {
-        return currencyDatabase.getExchangeRate(sourceCurrency, destinationCurrency);
+        return exchangeRate.getExchangeRate(sourceCurrency, destinationCurrency, currencies);
     }
 
     public void addCurrency(String code, String name, boolean major) throws Exception {
